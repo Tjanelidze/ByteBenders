@@ -1,0 +1,22 @@
+@media screen and (max-width: 970px) {
+  /*
+  ========================================
+    Main 
+  ========================================
+*/
+
+  /* logo size correlatoin */
+
+  .logo {
+    width: 20%;
+  }
+
+  /* Main part styling */
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-left {
+    display: none;
+  }
+}

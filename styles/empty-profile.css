@@ -9,12 +9,6 @@ body {
   height: 100vh;
 }
 
-/*
-  ========================================
-    Header 
-  ========================================
-*/
-
 .container {
   max-width: 1352px;
   margin: 0 auto;
@@ -24,6 +18,12 @@ body {
   height: 100%;
   padding: 24px;
 }
+
+/*
+  ========================================
+    Header 
+  ========================================
+*/
 
 /* General styles for the header part */
 header {
@@ -35,11 +35,19 @@ header {
   align-items: center;
 }
 
-/* Header's middle section buttons styling beneath */
+/* From here we have headers middle section */
 
 .header-details {
   display: flex;
   gap: 16px;
+}
+
+.logo {
+  width: 15%;
+}
+
+.logo-small {
+  display: none;
 }
 
 .links {
@@ -50,6 +58,7 @@ header {
   border-radius: 8px;
   display: flex;
   gap: 8px;
+  cursor: pointer;
 }
 
 .btn {
@@ -57,6 +66,14 @@ header {
   font-weight: 600;
   text-align: center;
   margin-top: 2px;
+}
+
+.links:hover {
+  color: #633cff;
+}
+
+.icon-link path:hover {
+  fill: #633cff;
 }
 
 .prof-details {
@@ -67,6 +84,7 @@ header {
   padding: 11px 27px;
   display: flex;
   gap: 3px;
+  cursor: pointer;
 }
 
 .prof-p {
@@ -79,21 +97,35 @@ header {
   /* Should add icon color changer */
 }
 
+.prof-details:hover {
+  color: #633cff;
+}
+
+.icon-details path:hover {
+  fill: #633cff;
+}
+
 .preview {
   border-radius: 8px;
   background-color: white;
   padding: 11px 27px;
   border: 1px solid var(--purple, #633cff);
+  cursor: pointer;
 }
 
 .preview-p {
   color: var(--purple, #633cff);
-  background: white;
+  background: inherit;
   border: none;
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 }
 
+.preview:hover {
+  border: 1px solid var(--purple, #633cff);
+  background: var(--light-purple, #efebff);
+}
 /*
   ========================================
     Main 
@@ -162,14 +194,21 @@ header {
   width: 100%;
   margin: 40px 0 24px;
   text-align: center;
+  cursor: pointer;
 }
 
 .add-p {
   color: var(--purple, #633cff);
   font-size: 16px;
   font-weight: 600;
-  background-color: white;
+  background-color: inherit;
   border: none;
+  cursor: pointer;
+}
+
+.add-link:hover {
+  border: 1px solid var(--purple, #633cff);
+  background: var(--light-purple, #efebff);
 }
 
 /* Grey part */
@@ -186,21 +225,24 @@ header {
   margin-bottom: 40px;
 }
 
+.new-link-image {
+  width: 50%;
+}
+
 .new-link-h {
   color: var(--dark-grey, #333);
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-
   margin: 40px 0 24px;
 }
 
 .new-link-p {
-  width: 27em;
   color: var(--grey, #737373);
   text-align: center;
   font-size: 16px;
   font-weight: 400;
+  padding: 10px;
 }
 
 .end {
@@ -220,4 +262,10 @@ header {
   color: var(--white, #fff);
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.save:hover {
+  background: var(--purple-hover-color, #3c11e9);
+  box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
 }
