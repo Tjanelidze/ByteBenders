@@ -133,7 +133,7 @@ body {
         border-radius: 24px;
         background-color: #FFF;
         box-shadow:none;
-        padding: 48px 56px;
+        padding: 0;
         max-width: 349px;
         position: absolute;
         top: 50%;
