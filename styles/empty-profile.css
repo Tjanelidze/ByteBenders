@@ -1,0 +1,223 @@
+/*
+  ========================================
+    Body 
+  ========================================
+*/
+
+body {
+  background-color: #fafafa;
+  height: 100vh;
+}
+
+/*
+  ========================================
+    Header 
+  ========================================
+*/
+
+.container {
+  max-width: 1352px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  padding: 24px;
+}
+
+/* General styles for the header part */
+header {
+  border-radius: 12px;
+  background: var(--white, #fff);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header's middle section buttons styling beneath */
+
+.header-details {
+  display: flex;
+  gap: 16px;
+}
+
+.links {
+  background-color: white;
+  color: var(--grey, #737373);
+  padding: 11px 27px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.prof-details {
+  background-color: white;
+  color: var(--grey, #737373);
+  border-radius: 8px;
+  border: none;
+  padding: 11px 27px;
+  display: flex;
+  gap: 3px;
+}
+
+.prof-p {
+  width: 125px;
+}
+
+.link-active-state {
+  background: var(--light-purple, #efebff);
+  color: var(--purple, #633cff);
+  /* Should add icon color changer */
+}
+
+.preview {
+  border-radius: 8px;
+  background-color: white;
+  padding: 11px 27px;
+  border: 1px solid var(--purple, #633cff);
+}
+
+.preview-p {
+  color: var(--purple, #633cff);
+  background: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/*
+  ========================================
+    Main 
+  ========================================
+*/
+
+/* Main part styling */
+.main {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  gap: 24px;
+  flex-grow: 1;
+}
+
+.main-part {
+  border-radius: 12px;
+  border: none;
+  background: var(--white, #fff);
+  display: flex;
+  align-items: center;
+}
+
+/* left side of the main */
+
+.visual-left {
+  justify-content: center;
+  padding: 80px;
+}
+
+.phone {
+  width: 307px;
+}
+
+/* Right part of the main */
+
+.upper-main {
+  padding: 40px;
+  width: 100%;
+}
+
+.info-right {
+  flex-direction: column;
+}
+
+.customization-h {
+  color: var(--dark-grey, #333);
+  font-size: 32px;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.customization-p {
+  color: var(--grey, #737373);
+  font-size: 16px;
+  font-weight: 400;
+  align-self: stretch;
+  margin: 10px 0 40px;
+  text-align: left;
+}
+
+.add-link {
+  padding: 11px 27px;
+  border-radius: 8px;
+  border: 1px solid var(--purple, #633cff);
+  background-color: white;
+  width: 100%;
+  margin: 40px 0 24px;
+  text-align: center;
+}
+
+.add-p {
+  color: var(--purple, #633cff);
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border: none;
+}
+
+/* Grey part */
+
+.new-link-page {
+  width: 90%;
+  border-radius: 12px;
+  background: var(--light-grey, #fafafa);
+  padding: 60px 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.new-link-h {
+  color: var(--dark-grey, #333);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+
+  margin: 40px 0 24px;
+}
+
+.new-link-p {
+  width: 27em;
+  color: var(--grey, #737373);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.end {
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px;
+}
+
+.save {
+  border-radius: 8px;
+  border: none;
+  opacity: 0.25;
+  background: var(--purple, #633cff);
+  padding: 11px 27px;
+  color: var(--white, #fff);
+  font-size: 16px;
+  font-weight: 600;
+}
