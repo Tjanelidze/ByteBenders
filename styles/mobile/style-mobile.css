@@ -1,0 +1,48 @@
+@media (max-width: 500px) {
+  body {
+    background-color: white;
+  }
+
+  .container {
+    width: 375px;
+    padding-top: 32px;
+  }
+
+  .devlinks-img {
+    margin-left: 32px;
+    width: 45%;
+    margin-bottom: 64px;
+  }
+
+  .wrapper {
+    padding: 0 32px 32px 32px;
+  }
+
+  .login {
+    font-size: 24px;
+  }
+
+  .email-wrapper {
+    gap: 8px;
+  }
+
+  .password-wrapper {
+    gap: 8px;
+  }
+
+  .Create-account-a {
+    display: block;
+  }
+
+  .errorOfEmail {
+    top: 2px;
+  }
+
+  .error .email-input {
+    padding-right: 16px;
+  }
+
+  .error-password {
+    top: 2px;
+  }
+}

@@ -12,6 +12,7 @@ body {
 }
 
 .devlinks-img {
+  width: 60%;
   display: block;
   margin: auto;
   margin-bottom: 51px;
@@ -32,6 +33,7 @@ body {
 
 .get-you-started {
   color: #737373;
+
   font-size: 16px;
   font-weight: 400;
 }
@@ -80,7 +82,7 @@ body {
   box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
 }
 
-.erorOfEmail {
+.errorOfEmail {
   display: none;
   position: absolute;
   top: 35px;
@@ -110,7 +112,6 @@ body {
   left: 16px;
 }
 .eye-icon {
-  display: block;
   cursor: pointer;
   width: 17px;
   position: absolute;
@@ -132,7 +133,7 @@ body {
   caret-color: #633cff;
   box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
 }
-.Create-password-eror {
+.Create-password-error {
   display: none;
   position: absolute;
   top: 35px;
@@ -176,7 +177,7 @@ body {
   caret-color: #633cff;
   box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
 }
-.Confirm-password-eror {
+.Confirm-password-error {
   display: none;
   position: absolute;
   top: 35px;
@@ -223,106 +224,65 @@ body {
   font-weight: 400;
 }
 
-/* email eror */
+/* email error */
 
-.eror .email-input {
+.error .email-label {
+  color: #ff3939;
+}
+
+.error .email-input {
   border: 1px solid #ff3939;
   padding-right: 120px;
 }
-.eror .email-input:focus {
+
+.error .email-input:focus {
   outline: none;
   box-shadow: none;
 }
-.eror .erorOfEmail {
+
+.error .errorOfEmail {
   display: inline;
 }
 
-/* create password eror */
+/* create password error */
 
-.eror .Create-password-eror {
+.error .Create-password-label {
+  color: #ff3939;
+}
+
+.error .Create-password-error {
   display: inline;
 }
-.eror .Create-password-input:focus {
+
+.error .Create-password-input:focus {
   outline: none;
   box-shadow: none;
 }
-.eror .Create-password-input {
+
+.error .Create-password-input {
   border: 1px solid #ff3939;
 }
 
-/* confirm password eror */
+/* confirm password error */
 
-.eror .Confirm-password-eror {
+.error .Confirm-password-label {
+  color: #ff3939;
+}
+
+.error .Confirm-password-error {
   display: inline;
 }
-.eror .Confirm-password-input:focus {
+
+.error .Confirm-password-input:focus {
   outline: none;
   box-shadow: none;
 }
-.eror .Confirm-password-input {
+
+.error .Confirm-password-input {
   border: 1px solid #ff3939;
   padding-right: 130px;
 }
 
 .disappeared {
   display: none;
-}
-
-@media (max-width: 500px) {
-  body {
-    background-color: white;
-  }
-
-  .container {
-    width: 375px;
-    padding-top: 32px;
-  }
-
-  .devlinks-img {
-    margin-left: 32px;
-    width: 180px;
-    margin-bottom: 64px;
-  }
-
-  .wrapper {
-    padding: 0 32px 32px 32px;
-  }
-
-  .Create-account {
-    font-size: 24px;
-  }
-
-  .email-wrapper {
-    gap: 8px;
-  }
-
-  .Create-password-wrapper {
-    gap: 8px;
-  }
-
-  .Confirm-password-wrapper {
-    gap: 8px;
-  }
-
-  .login-a {
-    display: block;
-  }
-
-  .erorOfEmail {
-    top: 2px;
-  }
-  .eror .email-input {
-    padding-right: 16px;
-  }
-
-  .Create-password-eror {
-    top: 2px;
-  }
-  .Confirm-password-eror {
-    top: 2px;
-  }
-
-  .eror .Confirm-password-input {
-    padding-right: 16px;
-  }
 }
