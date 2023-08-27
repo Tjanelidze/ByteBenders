@@ -25,3 +25,7 @@
 body {
   font-family: "instrumentsans";
 }
+
+img {
+  width: 100%;
+}
