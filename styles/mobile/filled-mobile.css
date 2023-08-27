@@ -1,0 +1,78 @@
+@media screen and (max-width: 650px) {
+  /*
+  ========================================
+    Container 
+  ========================================
+*/
+
+  .container {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  /*
+  ========================================
+    Header 
+  ========================================
+*/
+
+  /* For mobile style we set for large logo display: none, and we introduce new small logo */
+
+  .logo {
+    display: none;
+  }
+
+  .logo-small {
+    display: inline-block;
+    width: 10%;
+  }
+
+  /* Header's middle section buttons styling beneath */
+
+  .header-details {
+    gap: 0;
+  }
+
+  /* Set the save button width to 100% */
+  .save {
+    width: 100%;
+  }
+
+  .links {
+    gap: 0;
+  }
+
+  /* Reduce upper mains padding */
+
+  .upper-main {
+    padding: 20px;
+  }
+
+  /* Delete the text part - 'Links' from header */
+
+  .links-p {
+    display: none;
+  }
+
+  /* Delete the text part - 'Profile details' from header */
+  .prof-p {
+    display: none;
+  }
+
+  /* Change the flex direction from row to column for upload image part */
+  .profile-pictures {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    margin: 0 20px 20px 20px;
+  }
+
+  .upload-photo {
+    margin: 0;
+  }
+
+  .profile-blanket {
+    margin: 0 20px 20px 20px;
+  }
+}
