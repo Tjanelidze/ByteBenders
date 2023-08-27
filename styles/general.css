@@ -1,5 +1,27 @@
+@font-face {
+  font-family: "instrumentsans";
+  src: url(../assets/fonts/instrumentsans-variablefont_wdthwght-webfont.woff2)
+      format("woff2"),
+    url(../assets/fonts/instrumentsans-variablefont_wdthwght-webfont.woff)
+      format("woff");
+  font-weight: 100 1000;
+}
+
+@font-face {
+  font-family: "instrumentsans";
+  src: url(../assets/fonts/instrumentsans-italic-variablefont_wdthwght-webfont.woff2)
+      format("woff2"),
+    url(../assets/fonts/instrumentsans-italic-variablefont_wdthwght-webfont.woff)
+      format("woff");
+  font-style: italic;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "instrumentsans";
 }

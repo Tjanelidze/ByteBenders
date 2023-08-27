@@ -10,13 +10,62 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/general.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Frontend Mentor | Link-sharing app</title>
   </head>
   <body>
-    Links Profile Details Preview Customize your links Add/edit/remove links
-    below and then share all your profiles with the world! + Add new link Let's
-    get you started Use the “Add new link” button to get started. Once you have
-    more than one link, you can reorder and edit them. We're here to help you
-    share your profiles with everyone! Save
+    <div class="container">
+      <img
+        class="devlinks-img"
+        src="./assets/images/logo-devlinks-large.svg"
+        alt=""
+      />
+
+      <div class="wrapper">
+        <h1 class="login">Login</h1>
+        <p class="Add-your-details">
+          Add your details below to get back into the app
+        </p>
+        <form action="/submit" method="post" class="form-Of-Login">
+          <div class="email-wrapper">
+            <label for="Email address" class="email-label">Email address</label>
+            <img
+              class="icon-email"
+              src="./assets/images/icon-email.svg"
+              alt=""
+            />
+            <input
+              type="email"
+              class="email-input allInput"
+              placeholder="e.g. alex@email.com"
+            />
+            <p class="erorOfEmail">Can’t be empty</p>
+          </div>
+
+          <div class="password-wrapper">
+            <label for="Password" class="password-label">Password </label>
+            <img
+              class="icon-password"
+              src="./assets/images/icon-password.svg"
+              alt=""
+            />
+            <input
+              type="password"
+              class="password-input allInput"
+              placeholder="Enter your password"
+            />
+            <p class="error-password">Please check again</p>
+          </div>
+          <button class="login-button">Login</button>
+        </form>
+        <p class="Don’t-have-account">
+          Don’t have an account?
+          <a href="./pages/register.html" class="Create-account-a"
+            >Create account</a
+          >
+        </p>
+      </div>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>

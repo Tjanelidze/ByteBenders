@@ -1,0 +1,328 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+
+.container {
+  width: 476px;
+  max-width: 476px;
+}
+
+.devlinks-img {
+  display: block;
+  margin: auto;
+  margin-bottom: 51px;
+}
+
+.wrapper {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.Create-account {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.get-you-started {
+  color: #737373;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.form-Of-registracion {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.email-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.email-label {
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.icon-email {
+  width: 16px;
+  position: absolute;
+  top: 32px;
+  left: 16px;
+}
+
+.email-input {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 12px 16px 12px 44px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.email-input:focus {
+  outline: 1px solid #633cff;
+  caret-color: #633cff;
+  box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+}
+
+.erorOfEmail {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 16px;
+  color: #ff3939;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Create-password-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.Create-password-label {
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.icon-Create-password {
+  width: 16px;
+  position: absolute;
+  top: 32px;
+  left: 16px;
+}
+.eye-icon {
+  display: block;
+  cursor: pointer;
+  width: 17px;
+  position: absolute;
+  top: 33px;
+  left: 14px;
+}
+.Create-password-input {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 12px 16px 12px 44px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Create-password-input:focus {
+  outline: 1px solid #633cff;
+  caret-color: #633cff;
+  box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+}
+.Create-password-eror {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 16px;
+  color: #ff3939;
+  font-size: 12px;
+  font-weight: 400;
+}
+.Confirm-password-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.Confirm-password-label {
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.icon-confirm-password {
+  width: 16px;
+  position: absolute;
+  top: 32px;
+  left: 16px;
+}
+
+.Confirm-password-input {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 12px 16px 12px 44px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Confirm-password-input:focus {
+  outline: 1px solid #633cff;
+  caret-color: #633cff;
+  box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+}
+.Confirm-password-eror {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 16px;
+  color: #ff3939;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Password-must-contain {
+  color: #737373;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Create-new-account {
+  height: 46px;
+  width: 100%;
+  border-radius: 8px;
+  background: #633cff;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.Create-new-account:hover {
+  background: #beadff;
+  box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+  cursor: pointer;
+}
+
+.Already-have {
+  color: #737373;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.login-a {
+  text-decoration: none;
+  color: #633cff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* email eror */
+
+.eror .email-input {
+  border: 1px solid #ff3939;
+  padding-right: 120px;
+}
+.eror .email-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.eror .erorOfEmail {
+  display: inline;
+}
+
+/* create password eror */
+
+.eror .Create-password-eror {
+  display: inline;
+}
+.eror .Create-password-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.eror .Create-password-input {
+  border: 1px solid #ff3939;
+}
+
+/* confirm password eror */
+
+.eror .Confirm-password-eror {
+  display: inline;
+}
+.eror .Confirm-password-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.eror .Confirm-password-input {
+  border: 1px solid #ff3939;
+  padding-right: 130px;
+}
+
+.disappeared {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  body {
+    background-color: white;
+  }
+
+  .container {
+    width: 375px;
+    padding-top: 32px;
+  }
+
+  .devlinks-img {
+    margin-left: 32px;
+    width: 180px;
+    margin-bottom: 64px;
+  }
+
+  .wrapper {
+    padding: 0 32px 32px 32px;
+  }
+
+  .Create-account {
+    font-size: 24px;
+  }
+
+  .email-wrapper {
+    gap: 8px;
+  }
+
+  .Create-password-wrapper {
+    gap: 8px;
+  }
+
+  .Confirm-password-wrapper {
+    gap: 8px;
+  }
+
+  .login-a {
+    display: block;
+  }
+
+  .erorOfEmail {
+    top: 2px;
+  }
+  .eror .email-input {
+    padding-right: 16px;
+  }
+
+  .Create-password-eror {
+    top: 2px;
+  }
+  .Confirm-password-eror {
+    top: 2px;
+  }
+
+  .eror .Confirm-password-input {
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/register.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="devlinks-img"
+        src="../assets/images/logo-devlinks-large.svg"
+        alt=""
+      />
+
+      <div class="wrapper">
+        <h1 class="Create-account">Create account</h1>
+        <p class="get-you-started">Let’s get you started sharing your links!</p>
+        <form action="/submit" method="post" class="form-Of-registracion">
+          <div class="email-wrapper">
+            <label for="Email address" class="email-label">Email address</label>
+            <img
+              class="icon-email"
+              src="../assets/images/icon-email.svg"
+              alt=""
+            />
+            <input
+              type="email"
+              class="email-input allInput"
+              placeholder="e.g. alex@email.com"
+            />
+            <p class="erorOfEmail">invalid email!</p>
+          </div>
+
+          <div class="Create-password-wrapper">
+            <label for="Password" class="Create-password-label"
+              >Create password
+            </label>
+            <img
+              class="icon-Create-password"
+              src="../assets/images/icon-password.svg"
+              alt=""
+            />
+            <img
+              class="eye-icon disappeared"
+              src="../assets/images/eye-for-password.png"
+              alt="eye"
+            />
+            <input
+              type="password"
+              class="Create-password-input allInput password-input"
+              placeholder="At least 8 characters"
+            />
+            <p class="Create-password-eror">Please check again</p>
+          </div>
+
+          <div class="Confirm-password-wrapper">
+            <label for="Password" class="Confirm-password-label"
+              >Confirm password
+            </label>
+
+            <img
+              class="icon-confirm-password"
+              src="../assets/images/icon-password.svg"
+              alt=""
+            />
+            <img
+              class="eye-icon disappeared"
+              src="../assets/images/eye-for-password.png"
+              alt="eye"
+            />
+            <input
+              type="password"
+              class="Confirm-password-input allInput password-input"
+              placeholder="At least 8 characters"
+            />
+            <p class="Confirm-password-eror">Please check again</p>
+          </div>
+          <p class="Password-must-contain">
+            Password must contain at least 8 characters
+          </p>
+          <button class="Create-new-account">Create new account</button>
+        </form>
+        <p class="Already-have">
+          Already have an account?
+          <a href="../index.html" class="login-a">Login</a>
+        </p>
+      </div>
+    </div>
+    <script src="../pages.js/register.js"></script>
+  </body>
+</html>
