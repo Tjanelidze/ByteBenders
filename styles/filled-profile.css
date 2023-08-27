@@ -19,6 +19,10 @@ body {
   padding: 24px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*
   ========================================
     Header 
@@ -59,6 +63,8 @@ header {
   display: flex;
   gap: 8px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  text-decoration: none;
 }
 
 .btn {
@@ -72,8 +78,12 @@ header {
   color: #633cff;
 }
 
-.icon-link path:hover {
+.links:hover .icon-link {
   fill: #633cff;
+}
+
+.icon-link {
+  fill: #737373;
 }
 
 .prof-details {
@@ -83,26 +93,30 @@ header {
   border: none;
   padding: 11px 27px;
   display: flex;
-  gap: 3px;
+  gap: 8px;
   cursor: pointer;
-}
-
-.prof-p {
-  width: 125px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .link-active-state {
   background: var(--light-purple, #efebff);
   color: var(--purple, #633cff);
-  /* Should add icon color changer */
+}
+
+.link-active-state .icon-details {
+  fill: #633cff;
 }
 
 .prof-details:hover {
   color: #633cff;
 }
 
-.icon-details path:hover {
+.prof-details:hover .icon-details {
   fill: #633cff;
+}
+
+.icon-details {
+  fill: #737373;
 }
 
 .preview {
@@ -120,6 +134,7 @@ header {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .preview:hover {
@@ -201,7 +216,7 @@ header {
 .profile-picture-p {
   color: var(--grey, #737373);
   font-size: 16px;
-  font-weight: 400;2
+  font-weight: 400;
 }
 
 .upload-photo {
@@ -289,6 +304,7 @@ input[type="text"] {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .save:hover {
