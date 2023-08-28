@@ -25,7 +25,19 @@
   .email-wrapper {
     gap: 8px;
   }
+  .icon-email {
+    top: 39px;
+  }
+  .icon-Create-password {
+    top: 37px;
+  }
 
+  .icon-confirm-password {
+    top: 37px;
+  }
+  .eye-icon {
+    top: 37px;
+  }
   .Create-password-wrapper {
     gap: 8px;
   }
