@@ -19,6 +19,10 @@ body {
   padding: 24px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*
   ========================================
     Header 
@@ -28,7 +32,7 @@ body {
 /* General styles for the header part */
 header {
   border-radius: 12px;
-  background: var(--white, #fff);
+  background: #fff;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
@@ -52,13 +56,15 @@ header {
 
 .links {
   background-color: white;
-  color: var(--grey, #737373);
+  color: #737373;
   padding: 11px 27px;
   border: none;
   border-radius: 8px;
   display: flex;
   gap: 8px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  text-decoration: none;
 }
 
 .btn {
@@ -72,59 +78,68 @@ header {
   color: #633cff;
 }
 
-.icon-link path:hover {
+.links:hover .icon-link {
   fill: #633cff;
+}
+
+.icon-link {
+  fill: #737373;
 }
 
 .prof-details {
   background-color: white;
-  color: var(--grey, #737373);
+  color: #737373;
   border-radius: 8px;
   border: none;
   padding: 11px 27px;
   display: flex;
-  gap: 3px;
+  gap: 8px;
   cursor: pointer;
-}
-
-.prof-p {
-  width: 125px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .link-active-state {
-  background: var(--light-purple, #efebff);
+  background: #efebff;
   color: var(--purple, #633cff);
-  /* Should add icon color changer */
+}
+
+.link-active-state .icon-details {
+  fill: #633cff;
 }
 
 .prof-details:hover {
   color: #633cff;
 }
 
-.icon-details path:hover {
+.prof-details:hover .icon-details {
   fill: #633cff;
+}
+
+.icon-details {
+  fill: #737373;
 }
 
 .preview {
   border-radius: 8px;
   background-color: white;
   padding: 11px 27px;
-  border: 1px solid var(--purple, #633cff);
+  border: 1px solid #633cff;
   cursor: pointer;
 }
 
 .preview-p {
-  color: var(--purple, #633cff);
+  color: #633cff;
   background: inherit;
   border: none;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .preview:hover {
-  border: 1px solid var(--purple, #633cff);
-  background: var(--light-purple, #efebff);
+  border: 1px solid #633cff;
+  background: #efebff;
 }
 /*
   ========================================
@@ -143,7 +158,7 @@ header {
 .main-part {
   border-radius: 12px;
   border: none;
-  background: var(--white, #fff);
+  background: #fff;
   display: flex;
   align-items: center;
 }
@@ -171,14 +186,14 @@ header {
 }
 
 .customization-h {
-  color: var(--dark-grey, #333);
+  color: #333;
   font-size: 32px;
   font-weight: 700;
   align-self: stretch;
 }
 
 .customization-p {
-  color: var(--grey, #737373);
+  color: #737373;
   font-size: 16px;
   font-weight: 400;
   align-self: stretch;
@@ -193,21 +208,21 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: var(--light-grey, #fafafa);
+  background: #fafafa;
   padding: 20px;
   margin: 0 40px 40px 40px;
 }
 
 .profile-picture-p {
-  color: var(--grey, #737373);
+  color: #737373;
   font-size: 16px;
-  font-weight: 400;2
+  font-weight: 400;
 }
 
 .upload-photo {
   width: 40%;
   border-radius: 12px;
-  background: var(--light-purple, #efebff);
+  background: #efebff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,14 +236,14 @@ header {
 }
 
 .upload-p {
-  color: var(--purple, #633cff);
+  color: #633cff;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
 
 .upload-explanation {
-  color: var(--grey, #737373);
+  color: #737373;
   font-size: 16px;
   font-weight: 400;
 }
@@ -240,7 +255,7 @@ header {
   flex-direction: column;
   gap: 12px;
   border-radius: 12px;
-  background: var(--light-grey, #fafafa);
+  background: #fafafa;
   padding: 20px;
   margin: 0 40px 40px 40px;
 }
@@ -252,7 +267,7 @@ header {
 }
 
 label {
-  color: var(--grey, #737373);
+  color: #737373;
   font-size: 16px;
   font-weight: 400;
   width: 11em;
@@ -260,10 +275,10 @@ label {
 
 input[type="text"] {
   border-radius: 8px;
-  border: 1px solid var(--borders, #d9d9d9);
-  background: var(--white, #fff);
+  border: 1px solid #d9d9d9;
+  background: #fff;
   padding: 12px;
-  color: var(--dark-grey, #333);
+  color: #333;
   font-size: 16px;
   font-weight: 400;
   width: 100%;
@@ -284,14 +299,15 @@ input[type="text"] {
   border: none;
   opacity: 0.25;
   padding: 11px 27px;
-  background: var(--purple, #633cff);
-  color: var(--white, #fff);
+  background: #633cff;
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .save:hover {
-  background: var(--purple-hover-color, #3c11e9);
+  background: #3c11e9;
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
 }

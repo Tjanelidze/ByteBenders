@@ -20,3 +20,8 @@
     display: none;
   }
 }
+@media screen and (max-height: 887px) {
+  .main-part {
+    padding: 35px 0;
+  }
+}

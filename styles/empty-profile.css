@@ -19,6 +19,10 @@ body {
   padding: 24px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*
   ========================================
     Header 
@@ -28,7 +32,7 @@ body {
 /* General styles for the header part */
 header {
   border-radius: 12px;
-  background: var(--white, #fff);
+  background: #fff;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
@@ -52,13 +56,15 @@ header {
 
 .links {
   background-color: white;
-  color: var(--grey, #737373);
+  color: #737373;
   padding: 11px 27px;
   border: none;
   border-radius: 8px;
   display: flex;
   gap: 8px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  text-decoration: none;
 }
 
 .btn {
@@ -72,49 +78,58 @@ header {
   color: #633cff;
 }
 
-.link:hover .icon-link path {
+.links:hover .icon-link {
   fill: #633cff;
+}
+
+.icon-link {
+  fill: #737373;
 }
 
 .prof-details {
   background-color: white;
-  color: var(--grey, #737373);
+  color: #737373;
   border-radius: 8px;
   border: none;
   padding: 11px 27px;
   display: flex;
-  gap: 3px;
+  gap: 8px;
   cursor: pointer;
-}
-
-.prof-p {
-  width: 125px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .link-active-state {
-  background: var(--light-purple, #efebff);
-  color: var(--purple, #633cff);
-  /* Should add icon color changer */
+  background: #efebff;
+  color: #633cff;
+}
+
+.link-active-state .icon-link {
+  fill: #633cff;
 }
 
 .prof-details:hover {
   color: #633cff;
 }
 
-.icon-details path:hover {
+.prof-details:hover .icon-details {
   fill: #633cff;
+}
+
+.icon-details {
+  fill: #737373;
 }
 
 .preview {
   border-radius: 8px;
   background-color: white;
   padding: 11px 27px;
-  border: 1px solid var(--purple, #633cff);
+  border: 1px solid #633cff;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .preview-p {
-  color: var(--purple, #633cff);
+  color: #633cff;
   background: inherit;
   border: none;
   font-size: 16px;
@@ -123,8 +138,8 @@ header {
 }
 
 .preview:hover {
-  border: 1px solid var(--purple, #633cff);
-  background: var(--light-purple, #efebff);
+  border: 1px solid #633cff;
+  background: #efebff;
 }
 /*
   ========================================
@@ -135,7 +150,7 @@ header {
 /* Main part styling */
 .main {
   display: grid;
-  grid-template-columns: 40fr 60fr;
+  grid-template-columns: 45fr 55fr;
   gap: 24px;
   flex-grow: 1;
 }
@@ -143,7 +158,7 @@ header {
 .main-part {
   border-radius: 12px;
   border: none;
-  background: var(--white, #fff);
+  background: #fff;
   display: flex;
   align-items: center;
 }
@@ -152,11 +167,14 @@ header {
 
 .visual-left {
   justify-content: center;
-  padding: 80px;
 }
 
 .phone {
   width: 307px;
+}
+
+.img-wrapper {
+  position: relative;
 }
 
 /* Right part of the main */
@@ -168,17 +186,18 @@ header {
 
 .info-right {
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .customization-h {
-  color: var(--dark-grey, #333);
+  color: #333;
   font-size: 32px;
   font-weight: 700;
   align-self: stretch;
 }
 
 .customization-p {
-  color: var(--grey, #737373);
+  color: #737373;
   font-size: 16px;
   font-weight: 400;
   align-self: stretch;
@@ -189,16 +208,17 @@ header {
 .add-link {
   padding: 11px 27px;
   border-radius: 8px;
-  border: 1px solid var(--purple, #633cff);
+  border: 1px solid #633cff;
   background-color: white;
   width: 100%;
   margin: 40px 0 24px;
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .add-p {
-  color: var(--purple, #633cff);
+  color: #633cff;
   font-size: 16px;
   font-weight: 600;
   background-color: inherit;
@@ -207,8 +227,8 @@ header {
 }
 
 .add-link:hover {
-  border: 1px solid var(--purple, #633cff);
-  background: var(--light-purple, #efebff);
+  border: 1px solid #633cff;
+  background: #efebff;
 }
 
 /* Grey part */
@@ -216,7 +236,7 @@ header {
 .new-link-page {
   width: 90%;
   border-radius: 12px;
-  background: var(--light-grey, #fafafa);
+  background: #fafafa;
   padding: 60px 0 80px;
   display: flex;
   flex-direction: column;
@@ -230,7 +250,7 @@ header {
 }
 
 .new-link-h {
-  color: var(--dark-grey, #333);
+  color: #333;
   text-align: center;
   font-size: 32px;
   font-weight: 700;
@@ -238,7 +258,7 @@ header {
 }
 
 .new-link-p {
-  color: var(--grey, #737373);
+  color: #737373;
   text-align: center;
   font-size: 16px;
   font-weight: 400;
@@ -257,15 +277,149 @@ header {
   border-radius: 8px;
   border: none;
   opacity: 0.25;
-  background: var(--purple, #633cff);
+  background: #633cff;
   padding: 11px 27px;
-  color: var(--white, #fff);
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .save:hover {
-  background: var(--purple-hover-color, #3c11e9);
+  background: #3c11e9;
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
+}
+
+/* From here there is added link part */
+
+/* left part of main div - need updates */
+.added-link-rectangle {
+  border-radius: 8px;
+  background: #1a1a1a;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 43.8%;
+  left: 11.5%;
+}
+
+#rectangle-id {
+  display: none;
+}
+
+.icon-github-rectangle {
+  fill: #ffffff;
+  width: 100%;
+}
+
+.rectangle-h {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: 114px;
+}
+
+/* Right part of the main div */
+
+.link-box {
+  border-radius: 12px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 12px;
+  display: none;
+}
+
+.upper-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.custom-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: #737373;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.custom-remove {
+  white-space: nowrap;
+  margin-left: auto;
+  color: #737373;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.icon-drag-and-drop {
+  width: 30%;
+}
+
+/* From here we have custom selections styling */
+
+.custom-selections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.cstm {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.cstm label {
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#platform-selection {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(../assets/images/icon-github.svg),
+    url("../assets/images/icon-chevron-down.svg");
+  background-repeat: no-repeat;
+  background-size: 3%, 16px;
+  background-position: 2%, 97%;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.gitHub {
+  margin-left: 10%;
+}
+
+#input-link {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 12px 30px;
+  background-image: url(../assets/images/icon-link.svg);
+  background-repeat: no-repeat;
+  background-position: 8px 11px;
 }
