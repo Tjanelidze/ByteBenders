@@ -20,7 +20,7 @@ let newLink = () => {
 let removeLink = () => {};
 
 // Added event listener to new Link button
-newLinkBtn.addEventListener("click", function () {});
+newLinkBtn.addEventListener("click", newLink);
 
 // Add event listener to remove link button
 removeBtn.addEventListener("click", removeLink);
