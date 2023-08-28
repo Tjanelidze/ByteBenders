@@ -150,7 +150,7 @@ header {
 /* Main part styling */
 .main {
   display: grid;
-  grid-template-columns: 40fr 60fr;
+  grid-template-columns: 45fr 55fr;
   gap: 24px;
   flex-grow: 1;
 }
@@ -167,7 +167,7 @@ header {
 
 .visual-left {
   justify-content: center;
-  padding: 80px;
+  position: relative;
 }
 
 .phone {
@@ -183,6 +183,7 @@ header {
 
 .info-right {
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .customization-h {
@@ -285,4 +286,127 @@ header {
 .save:hover {
   background: var(--purple-hover-color, #3c11e9);
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
+}
+
+/* From here there is added link part */
+
+/* left part of main div - need updates */
+.added-link-rectangle {
+  border-radius: 8px;
+  background: #1a1a1a;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 45.3%;
+  left: 25%;
+}
+
+.icon-github-rectangle {
+  fill: #ffffff;
+  width: 100%;
+}
+
+.rectangle-h {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: 114px;
+}
+
+/* Right part of the main div */
+
+.link-box {
+  border-radius: 12px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 12px;
+}
+
+.upper-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: #737373;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.custom-remove {
+  white-space: nowrap;
+  margin-left: auto;
+  color: #737373;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.icon-drag-and-drop {
+  width: 30%;
+}
+
+/* From here we have custom selections styling */
+
+.custom-selections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.cstm {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.cstm label {
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#platform-selection {
+  background-image: url(../assets/images/icon-github.svg);
+  background-repeat: no-repeat;
+  background-size: 3%;
+  background-position: 2%;
+  padding: 12px 5%;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.gitHub {
+  margin-left: 10%;
+}
+
+#input-link {
+  border-radius: 8px;
+  border: 1px solid var(--borders, #d9d9d9);
+  background: var(--white, #fff);
+  padding: 12px 31px;
+  background-image: url(../assets/images/icon-link.svg);
+  background-repeat: no-repeat;
+  background-position: 8px 11px;
 }
