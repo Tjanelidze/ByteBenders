@@ -1,11 +1,7 @@
 const allInput = document.querySelectorAll(".allInput");
-
 const formOfLogin = document.querySelector(".form-Of-Login");
-
 const loginButton = document.querySelector(".login-button");
-
 const emailInput = document.querySelector(".email-input");
-
 const passwordInput = document.querySelector(".password-input");
 const eyeIcon = document.querySelectorAll(".eye-icon");
 const regexForPassword = /.{8,}/;
@@ -41,6 +37,9 @@ allInput.forEach((element) => {
 passwordInput.addEventListener("keydown", () => {
   passwordInput.parentElement.children[2].classList.remove("disappeared");
   passwordInput.parentElement.children[1].classList.add("disappeared");
+  if (passwordInput.value === "") {
+    passwordInput.type = "password";
+  }
 });
 
 //show password

@@ -71,35 +71,40 @@
         </div> -->
         <!-- In dekstop design, we have left part of the viewport, where sets phone image -->
         <div class="main-part visual-left">
-          <img src="../assets/images/illustration-phone-mockup.svg"
-          alt="illustration-phone-mockup" class="phone"">
-          <div class="added-link-rectangle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="none"
-              viewBox="0 0 16 16"
-              class="icon-github-rectangle"
-            >
-              <g clip-path="url(#a)">
-                <path
-                  fill="#737373"
-                  d="M9.982 2.288a8.756 8.756 0 0 0-3.963 0c-.754-.462-1.329-.674-1.747-.764a2.315 2.315 0 0 0-.544-.056 1.342 1.342 0 0 0-.247.03l-.01.002-.005.002h-.003l.146.513-.146-.512a.533.533 0 0 0-.342.294 3.328 3.328 0 0 0-.17 2.241 3.578 3.578 0 0 0-.817 2.287c0 1.657.488 2.77 1.321 3.486.584.501 1.292.768 2.002.92a2.496 2.496 0 0 0-.123 1.022v.638c-.434.09-.735.062-.95-.008-.267-.089-.473-.267-.67-.523a5.118 5.118 0 0 1-.289-.429l-.06-.099a9.772 9.772 0 0 0-.24-.378c-.202-.3-.503-.675-.99-.803l-.515-.135-.271 1.032.516.136c.085.021.196.101.379.369.07.106.137.213.202.322l.073.117c.1.162.215.342.349.517.27.352.637.707 1.184.887.373.124.797.154 1.282.079v1.992a.533.533 0 0 0 .533.533h4.267a.533.533 0 0 0 .533-.534v-3.8c0-.336-.015-.644-.11-.931.707-.15 1.41-.416 1.99-.918.833-.72 1.32-1.845 1.32-3.511v-.001a3.578 3.578 0 0 0-.82-2.267 3.328 3.328 0 0 0-.169-2.24.533.533 0 0 0-.34-.295l-.146.512c.146-.512.145-.512.144-.512l-.002-.001-.005-.002-.01-.003a1.344 1.344 0 0 0-.248-.03 2.318 2.318 0 0 0-.544.057c-.417.09-.992.302-1.745.764Z"
-                />
-              </g>
-              <defs>
-                <clipPath id="a">
-                  <path fill="#fff" d="M0 0h16v16H0z" />
-                </clipPath>
-              </defs>
-            </svg>
-            <h4 class="rectangle-h">GitHub</h4>
+          <div class="img-wrapper">
             <img
-              src="../assets/images/icon-arrow-right.svg"
-              alt="icon-arrow-right"
-              class="icon-arrow-right"
+              src="../assets/images/illustration-phone-mockup.svg"
+              alt="illustration-phone-mockup"
+              class="phone"
             />
+            <div class="added-link-rectangle" id="rectangle-id">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 16 16"
+                class="icon-github-rectangle"
+              >
+                <g clip-path="url(#a)">
+                  <path
+                    fill="#737373"
+                    d="M9.982 2.288a8.756 8.756 0 0 0-3.963 0c-.754-.462-1.329-.674-1.747-.764a2.315 2.315 0 0 0-.544-.056 1.342 1.342 0 0 0-.247.03l-.01.002-.005.002h-.003l.146.513-.146-.512a.533.533 0 0 0-.342.294 3.328 3.328 0 0 0-.17 2.241 3.578 3.578 0 0 0-.817 2.287c0 1.657.488 2.77 1.321 3.486.584.501 1.292.768 2.002.92a2.496 2.496 0 0 0-.123 1.022v.638c-.434.09-.735.062-.95-.008-.267-.089-.473-.267-.67-.523a5.118 5.118 0 0 1-.289-.429l-.06-.099a9.772 9.772 0 0 0-.24-.378c-.202-.3-.503-.675-.99-.803l-.515-.135-.271 1.032.516.136c.085.021.196.101.379.369.07.106.137.213.202.322l.073.117c.1.162.215.342.349.517.27.352.637.707 1.184.887.373.124.797.154 1.282.079v1.992a.533.533 0 0 0 .533.533h4.267a.533.533 0 0 0 .533-.534v-3.8c0-.336-.015-.644-.11-.931.707-.15 1.41-.416 1.99-.918.833-.72 1.32-1.845 1.32-3.511v-.001a3.578 3.578 0 0 0-.82-2.267 3.328 3.328 0 0 0-.169-2.24.533.533 0 0 0-.34-.295l-.146.512c.146-.512.145-.512.144-.512l-.002-.001-.005-.002-.01-.003a1.344 1.344 0 0 0-.248-.03 2.318 2.318 0 0 0-.544.057c-.417.09-.992.302-1.745.764Z"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M0 0h16v16H0z" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <h4 class="rectangle-h">GitHub</h4>
+              <img
+                src="../assets/images/icon-arrow-right.svg"
+                alt="icon-arrow-right"
+                class="icon-arrow-right"
+              />
+            </div>
           </div>
         </div>
         <!-- This is the right and main part of parent div, where user can customize his/her links -->
@@ -113,70 +118,20 @@
             <div class="add-link">
               <button class="add-p">+ Add new link</button>
             </div>
-            <div class="link-box">
-              <div class="upper-link">
-                <div class="custom-link">
-                  <img
-                    src="../assets/images/icon-drag-and-drop.svg"
-                    alt="icon-drag-and-drop"
-                    class="icon-drag-and-drop"
-                  />
-                  <p class="custom-link-p">Link #1</p>
-                </div>
-                <p class="custom-remove">Remove</p>
-              </div>
-
-              <div class="custom-selections">
-                <div class="cstm upper-selection">
-                  <label for="platform-selection">Platform</label>
-                  <select
-                    name="Platform"
-                    id="platform-selection"
-                    class="customization-area"
-                  >
-                    <option value="Github" class="gitHub">Github</option>
-                    <option value="Frontend Mentor">Frontend Mentor</option>
-                    <option value="Twitter">Twitter</option>
-                    <option value="LinkedIn">LinkedIn</option>
-                    <option value="YouTube">YouTube</option>
-                    <option value="Facebook">Facebook</option>
-                    <option value="Twitch">Twitch</option>
-                    <option value="Dev.to">Dev.to</option>
-                    <option value="Codewars">Codewars</option>
-                    <option value="Codepen">Codepen</option>
-                    <option value="freeCodeCamp">freeCodeCamp</option>
-                    <option value="GitLab">GitLab</option>
-                    <option value="Hashnode">Hashnode</option>
-                    <option value="Stack Overflow">Stack Overflow</option>
-                  </select>
-                </div>
-                <div class="cstm bottom-selection">
-                  <label for="input-link">Link</label>
-                  <input
-                    type="text"
-                    name="input-link"
-                    class="customization-area"
-                    id="input-link"
-                    placeholder="e.g. https://www.github.com/johnappleseed"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
-          <!-- <div class="new-link-page">
-              <img
-                src="../assets/images/illustration-empty.svg"
-                alt="icon-link-copied-to-clipboard"
-                class="new-link-image"
-              />
-              <h3 class="new-link-h">Let’s get you started</h3>
-              <p class="new-link-p">
-                Use the “Add new link” button to get started. Once you have more
-                than one link, you can reorder and edit them. We’re here to help
-                you share your profiles with everyone!
-              </p>
-            </div> -->
-
+          <div class="new-link-page">
+            <img
+              src="../assets/images/illustration-empty.svg"
+              alt="icon-link-copied-to-clipboard"
+              class="new-link-image"
+            />
+            <h3 class="new-link-h">Let’s get you started</h3>
+            <p class="new-link-p">
+              Use the “Add new link” button to get started. Once you have more
+              than one link, you can reorder and edit them. We’re here to help
+              you share your profiles with everyone!
+            </p>
+          </div>
           <div class="end">
             <button class="save">Save</button>
           </div>
