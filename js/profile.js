@@ -1,4 +1,3 @@
-
 // Create the variables of html elements
 let newLinkBtn = document.querySelector(".add-link");
 let emptyDesign = document.querySelector(".new-link-page");
@@ -80,12 +79,14 @@ newLinkBtn.addEventListener("click", function () {
     </div>
     `;
 
-  //
   upperMain.appendChild(newLinkBox);
-  //
-
-  // if (currentLinks < maxLinks) {}
 });
 
-let removeBtn = upperMain.querySelector(".custom-remove");
-console.log(removeBtn);
+upperMain.addEventListener("click", (event) => {
+  if (event.target.classList.contains("custom-remove")) {
+    const linkBox = event.target.closest(".link-box");
+    if (linkBox) {
+      linkBox.remove();
+    }
+  }
+});

@@ -363,6 +363,7 @@ header {
   color: #737373;
   font-size: 16px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .icon-drag-and-drop {
