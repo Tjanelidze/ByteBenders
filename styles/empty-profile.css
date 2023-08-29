@@ -184,6 +184,28 @@ header {
   width: 100%;
 }
 
+.upper-main {
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.upper-main::-webkit-scrollbar {
+  width: 12px;
+}
+
+.upper-main::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.upper-main::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.upper-main::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .info-right {
   flex-direction: column;
   justify-content: space-between;
