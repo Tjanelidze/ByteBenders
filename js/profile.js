@@ -3,7 +3,6 @@ let newLinkBtn = document.querySelector(".add-link");
 let emptyDesign = document.querySelector(".new-link-page");
 let upperMain = document.querySelector(".upper-main");
 let inputLink = document.querySelector("#input-link");
-
 let phonePart = document.querySelector("#rectangle-id");
 
 let count = 0;
@@ -20,12 +19,12 @@ newLinkBtn.addEventListener("click", function () {
 
   // Create new variable, which has
   const newLinkBox = document.createElement("div");
-
-  //
-  count++;
-  if (count > 5) {
+  const currentLinks = upperMain.querySelectorAll(".link-box").length;
+  console.log(currentLinks);
+  if (currentLinks >= 5) {
     return;
   }
+
   //
   newLinkBox.innerHTML = `
       <div class="link-box">
@@ -81,10 +80,14 @@ newLinkBtn.addEventListener("click", function () {
 
   //
   upperMain.appendChild(newLinkBox);
-  //
-
-  // if (currentLinks < maxLinks) {}
 });
 
-let removeBtn = upperMain.querySelector(".custom-remove");
-console.log(removeBtn);
+// Remove button
+upperMain.addEventListener("click", (event) => {
+  if (event.target.classList.contains("custom-remove")) {
+    const linkBox = event.target.closest(".link-box");
+    if (linkBox) {
+      linkBox.remove();
+    }
+  }
+});
