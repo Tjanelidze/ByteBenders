@@ -17,7 +17,7 @@ newLinkBtn.addEventListener("click", function () {
   const newLinkBox = document.createElement("div");
 
   const currentLinks = upperMain.querySelectorAll(".link-box").length;
-  console.log(currentLinks);
+
   if (currentLinks >= 5) {
     return;
   }
@@ -31,7 +31,7 @@ newLinkBtn.addEventListener("click", function () {
             alt="icon-drag-and-drop"
             class="icon-drag-and-drop"
           />
-          <p class="custom-link-p">Link #${currentLinks + 1}</p>
+          <p class="custom-link-p">Link </p>
         </div>
         <p class="custom-remove">Remove</p>
       </div>
@@ -75,6 +75,7 @@ newLinkBtn.addEventListener("click", function () {
     `;
 
   upperMain.appendChild(newLinkBox);
+  updateLinkNumeration();
 });
 
 function updateLinkNumeration() {
@@ -88,7 +89,6 @@ function updateLinkNumeration() {
   });
 }
 
-
 upperMain.addEventListener("click", (event) => {
   if (event.target.classList.contains("custom-remove")) {
     const linkBox = event.target.closest(".link-box");
@@ -96,5 +96,12 @@ upperMain.addEventListener("click", (event) => {
       linkBox.remove();
       updateLinkNumeration();
     }
+  }
+});
+
+upperMain.addEventListener("input", (event) => {
+  if (event.target && event.target.classList.contains("customization-area")) {
+    const inputValue = event.target.value;
+    event.target.parentElement.children[1].style.backgroundImage = `url(../assets/images/icon-${inputValue}.svg), url(../assets/images/icon-chevron-down.svg)`;
   }
 });
