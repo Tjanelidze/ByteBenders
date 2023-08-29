@@ -1,4 +1,3 @@
-
 // Create the variables of html elements
 let newLinkBtn = document.querySelector(".add-link");
 let emptyDesign = document.querySelector(".new-link-page");
@@ -6,27 +5,23 @@ let upperMain = document.querySelector(".upper-main");
 let inputLink = document.querySelector("#input-link");
 let phonePart = document.querySelector("#rectangle-id");
 
-let count = 0;
 // Create a tiny function for add new link button
 let newLink = () => {
   emptyDesign.style.display = "none";
   phonePart.style.display = "flex";
 };
 
-// Added event listener to new Link button
 newLinkBtn.addEventListener("click", function () {
-  // Use functoin which hide new link page and show phone img component.
   newLink();
 
-  // Create new variable, which has
   const newLinkBox = document.createElement("div");
+
   const currentLinks = upperMain.querySelectorAll(".link-box").length;
   console.log(currentLinks);
   if (currentLinks >= 5) {
     return;
   }
 
-  //
   newLinkBox.innerHTML = `
       <div class="link-box">
       <div class="upper-link">
@@ -36,7 +31,7 @@ newLinkBtn.addEventListener("click", function () {
             alt="icon-drag-and-drop"
             class="icon-drag-and-drop"
           />
-          <p class="custom-link-p">Link #${count}</p>
+          <p class="custom-link-p">Link #${currentLinks + 1}</p>
         </div>
         <p class="custom-remove">Remove</p>
       </div>
@@ -79,16 +74,26 @@ newLinkBtn.addEventListener("click", function () {
     </div>
     `;
 
-  //
   upperMain.appendChild(newLinkBox);
 });
 
-// Remove button
+function updateLinkNumeration() {
+  const linkBoxes = upperMain.querySelectorAll(".link-box");
+  linkBoxes.forEach((linkBox, index) => {
+    const linkNumber = index + 1;
+    const linkNumberElement = linkBox.querySelector(".custom-link-p");
+    if (linkNumberElement) {
+      linkNumberElement.textContent = `Link #${linkNumber}`;
+    }
+  });
+}
+
 upperMain.addEventListener("click", (event) => {
   if (event.target.classList.contains("custom-remove")) {
     const linkBox = event.target.closest(".link-box");
     if (linkBox) {
       linkBox.remove();
+      updateLinkNumeration();
     }
   }
 });
