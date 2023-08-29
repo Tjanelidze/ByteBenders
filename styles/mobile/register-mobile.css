@@ -1,0 +1,70 @@
+@media (max-width: 500px) {
+  body {
+    background-color: white;
+  }
+
+  .container {
+    width: 375px;
+    padding-top: 32px;
+  }
+
+  .devlinks-img {
+    margin-left: 32px;
+    width: 45%;
+    margin-bottom: 64px;
+  }
+
+  .wrapper {
+    padding: 0 32px 32px 32px;
+  }
+
+  .Create-account {
+    font-size: 24px;
+  }
+
+  .email-wrapper {
+    gap: 8px;
+  }
+  .icon-email {
+    top: 39px;
+  }
+  .icon-Create-password {
+    top: 37px;
+  }
+
+  .icon-confirm-password {
+    top: 37px;
+  }
+  .eye-icon {
+    top: 37px;
+  }
+  .Create-password-wrapper {
+    gap: 8px;
+  }
+
+  .Confirm-password-wrapper {
+    gap: 8px;
+  }
+
+  .login-a {
+    display: block;
+  }
+
+  .errorOfEmail {
+    top: 2px;
+  }
+  .error .email-input {
+    padding-right: 16px;
+  }
+
+  .Create-password-error {
+    top: 2px;
+  }
+  .Confirm-password-error {
+    top: 2px;
+  }
+
+  .error .Confirm-password-input {
+    padding-right: 16px;
+  }
+}

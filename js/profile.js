@@ -1,3 +1,4 @@
+
 // Create the variables of html elements
 let newLinkBtn = document.querySelector(".add-link");
 let emptyDesign = document.querySelector(".new-link-page");
