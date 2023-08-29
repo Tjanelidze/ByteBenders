@@ -13,6 +13,7 @@ body {
 
 .devlinks-img {
   display: block;
+  width: 60%;
   margin: auto;
   margin-bottom: 51px;
 }
@@ -58,7 +59,7 @@ body {
 .icon-email {
   width: 16px;
   position: absolute;
-  top: 32px;
+  top: 34px;
   left: 16px;
 }
 
@@ -71,7 +72,7 @@ body {
   font-size: 16px;
   font-weight: 400;
 }
-.erorOfEmail {
+.errorOfEmail {
   display: none;
   position: absolute;
   top: 35px;
@@ -102,8 +103,16 @@ body {
 .icon-password {
   width: 16px;
   position: absolute;
-  top: 32px;
+  top: 33px;
   left: 16px;
+}
+
+.eye-icon {
+  cursor: pointer;
+  width: 17px;
+  position: absolute;
+  top: 33px;
+  left: 14px;
 }
 
 .password-input {
@@ -176,7 +185,7 @@ body {
   outline: none;
   box-shadow: none;
 }
-.error .erorOfEmail {
+.error .errorOfEmail {
   display: inline;
 }
 
@@ -194,48 +203,8 @@ body {
 .error .password-input {
   border: 1px solid #ff3939;
 }
-@media (max-width: 500px) {
-  body {
-    background-color: white;
-  }
-  .container {
-    width: 375px;
-    padding-top: 32px;
-  }
 
-  .devlinks-img {
-    margin-left: 32px;
-    width: 180px;
-    margin-bottom: 64px;
-  }
-
-  .wrapper {
-    padding: 0 32px 32px 32px;
-  }
-
-  .login {
-    font-size: 24px;
-  }
-
-  .email-wrapper {
-    gap: 8px;
-  }
-
-  .password-wrapper {
-    gap: 8px;
-  }
-  .Create-account-a {
-    display: block;
-  }
-
-  .erorOfEmail {
-    top: 2px;
-  }
-  .error .email-input {
-    padding-right: 16px;
-  }
-
-  .error-password {
-    top: 2px;
-  }
+/* eye-icon */
+.disappeared {
+  display: none;
 }
