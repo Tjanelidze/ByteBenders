@@ -266,7 +266,7 @@ header {
   align-items: center;
 }
 
-label {
+.blnks label {
   color: #737373;
   font-size: 16px;
   font-weight: 400;
@@ -310,4 +310,38 @@ input[type="text"] {
 .save:hover {
   background: #3c11e9;
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
+}
+/* Upload image */
+
+.custom-file-input {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-p {
+  display: none;
+}
+
+.custom-file-input label {
+  display: block;
+  margin: 0 auto;
+  background-color: inherit;
+  color: #633cff;
+  cursor: pointer;
+}
+
+.upload-p::before {
+  content: "Select an image";
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  max-height: 200px;
+  display: block;
+  margin-top: 10px;
 }
