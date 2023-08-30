@@ -83,7 +83,7 @@
           <div class="profile-details">
             <div class="profile-pictures">
               <p class="profile-picture-p">Profile picture</p>
-              <div class="upload-photo">
+              <!-- <div class="upload-photo">
                 <img
                   src="../assets/images/icon-upload-image.svg"
                   alt="icon-upload-image"
@@ -99,7 +99,23 @@
                   />
                   <label for="upload-photo">+ Upload Image</label>
                 </div>
-              </div>
+              </div> -->
+              <label for="upload-photo" class="upload-photo">
+                <img
+                  src="../assets/images/icon-upload-image.svg"
+                  alt="icon-upload-image"
+                  class="icon-upload"
+                />
+                <div class="custom-file-input">
+                  <input
+                    type="file"
+                    id="upload-photo"
+                    class="upload-p"
+                    accept="image/*"
+                  />
+                  + Upload Image
+                </div>
+              </label>
               <p class="upload-explanation">
                 Image must be below 1024x1024px. Use PNG or JPG format.
               </p>
