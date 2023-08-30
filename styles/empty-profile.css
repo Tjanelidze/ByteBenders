@@ -317,33 +317,35 @@ header {
 
 /* left part of main div - need updates */
 .added-link-rectangle {
+  width: 237px;
+  height: 44px;
   border-radius: 8px;
   background: #1a1a1a;
   padding: 13px 16px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   position: absolute;
   top: 43.8%;
   left: 11.5%;
 }
 
-#rectangle-id {
-  display: none;
-}
-
 .icon-github-rectangle {
-  fill: #ffffff;
-  width: 100%;
+  width: 20px;
+  filter: brightness(10);
 }
 
 .rectangle-h {
+  margin-right: auto;
   color: #fff;
   font-size: 12px;
   font-weight: 400;
-  margin-right: 114px;
+}
+.icon-arrow-right {
+  width: 20px;
+  filter: brightness(10);
 }
 
 /* Right part of the main div */
