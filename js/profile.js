@@ -138,7 +138,8 @@ upperMain.addEventListener("click", () => {
     arrayOfboxes.forEach((element, index) => {
       let newBox = document.createElement("div");
       newBox.classList.add("added-link-rectangle");
-      newBox.style.background = `${boxColors[element]}`;
+      newBox.style.background = boxColors[element];
+
       switch (index) {
         case 0:
           newBox.style.top = "43.8%";
@@ -167,6 +168,13 @@ upperMain.addEventListener("click", () => {
       let iconArrow = document.createElement("img");
       iconArrow.src = "../assets/images/icon-arrow-right.svg";
       iconArrow.classList.add("icon-arrow-right");
+
+      if (element == "Frontend Mentor") {
+        image.style.filter = "brightness(0%)";
+        iconArrow.style.filter = "brightness(0%)";
+        nameofBox.style.color = "black";
+        newBox.style.border = "1px solid  #D9D9D9";
+      }
 
       newBox.appendChild(image);
       newBox.appendChild(nameofBox);
