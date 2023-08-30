@@ -236,7 +236,7 @@ header {
   margin: 40px 0 24px;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.1s, color 0.1s, border-color 0.1s;
 }
 
 .add-p {
@@ -342,6 +342,7 @@ header {
   color: #fff;
   font-size: 12px;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 .icon-arrow-right {
   width: 20px;
