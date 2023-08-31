@@ -2,56 +2,41 @@ const saveButton = document.querySelector(".save");
 const firstNameInput = document.querySelector("#username");
 const lastNameInput = document.querySelector("#lastname");
 const emailInput = document.querySelector("#email-blank");
-//////////////////////////////////////////////////////////////
+const uploadInput = document.getElementById("upload-photo");
+const uploadPhotoWrapper = document.querySelector(".upload-photo-class");
 
 function updateFileName() {
   const inputElement = document.getElementById("upload-photo");
-
   const labelElement = inputElement.nextElementSibling;
-
-  const uploadPhotoWrapper = document.querySelector(".upload-photo");
-
+  console.log(inputElement.files[0]);
   if (inputElement.files && inputElement.files[0]) {
     const reader = new FileReader();
-
+    reader.readAsDataURL(inputElement.files[0]);
+    reader.addEventListener("load", () => {
+      localStorage.setItem("thumbnail", reader.result);
+    });
     reader.onload = function (e) {
-      const uploadedImage = document.createElement("img");
-      uploadedImage.src = e.target.result;
-      uploadedImage.classList.add("uploaded-image");
+      // Set the uploaded image as background image
+      uploadPhotoWrapper.style.backgroundImage = `url(${e.target.result})`;
 
-      // Remove any existing uploaded image
-      const existingImage = uploadPhotoWrapper.querySelector(".uploaded-image");
-      if (existingImage) {
-        existingImage.remove();
-      }
-
-      // Add the uploaded image to the wrapper
-      uploadPhotoWrapper.appendChild(uploadedImage);
-      console.log(uploadedImage);
       // Hide the label
       labelElement.style.display = "none";
     };
 
     reader.readAsDataURL(inputElement.files[0]);
   } else {
+    // Remove the background image and show the label
+    uploadPhotoWrapper.style.backgroundImage = "none";
 
-    uploadPhotoWrapper.style.backgroundImage =
-      "url('../assets/images/icon-upload-image.svg')";
-    uploadPhotoWrapper.classList.remove("upload-photo-background");
-
-    // Remove the uploaded image and show the label
-    const existingImage = uploadPhotoWrapper.querySelector(".uploaded-image");
-    if (existingImage) {
-      existingImage.remove();
-    }
+    // Show the label
     labelElement.style.display = "block";
-
   }
 }
 
+uploadInput.addEventListener("change", updateFileName);
+
 saveButton.addEventListener("click", () => {
   console.log(firstNameInput.value);
-
   console.log(lastNameInput.value);
   console.log(emailInput);
 });

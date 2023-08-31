@@ -217,22 +217,78 @@ header {
   color: #737373;
   font-size: 16px;
   font-weight: 400;
+  width: 15em;
 }
 
-.upload-photo {
+/* Upload image  */
+
+.upload-photo-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #efebff;
+  width: 40%;
+  padding: 61px 39px 35px;
+  margin: 0 24px 0 50px;
+  cursor: pointer;
+  position: relative; /* Add this */
+  background-size: cover;
+  position: relative;
 }
 
-.icon-upload {
-  width: 30%;
-  margin-bottom: 10px;
+.upload-photo-class:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../assets/images/icon-upload-image.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.upload-photo-class.uploaded:before {
+  content: "Change Photo";
+}
+
+.upload-photo-class:hover {
+  background-color: #8db9dd3f;
+  transition: 0.3s ease-in;
 }
 
 .upload-p {
-  color: #633cff;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
+  display: none;
 }
+
+.custom-file-input {
+  display: block;
+  margin: 0 auto;
+  background-color: inherit;
+  color: #633cff;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 16px;
+  width: 8em;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  max-height: 200px;
+  display: block;
+  margin-top: 10px;
+}
+
+.upload-photo-background {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Here upload image part stops, and begins right text part of it */
 
 .upload-explanation {
   color: #737373;
@@ -302,53 +358,4 @@ header {
 .save:hover {
   background: #3c11e9;
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
-}
-
-/* Upload image */
-
-.upload-photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border: none;
-  border-radius: 12px;
-  background-image: url("../assets/images/icon-upload-image.svg");
-  background-position: 50% 20%;
-  background-size: 30%;
-  background-repeat: no-repeat;
-  width: 40%;
-  padding: 61px 15px;
-  margin: 0 20px 8px 100px;
-  cursor: pointer;
-}
-
-.upload-photo:hover {
-  background-color: #8db9dd3f;
-  transition: 0.3s ease-in;
-}
-
-.upload-p {
-  display: none;
-}
-
-.custom-file-input {
-  display: block;
-  margin: 0 auto;
-  background-color: inherit;
-  color: #633cff;
-  cursor: pointer;
-  text-align: center;
-}
-
-.uploaded-image {
-  max-width: 100%;
-  max-height: 200px;
-  display: block;
-  margin-top: 10px;
-}
-
-.upload-photo-background {
-  background-size: cover;
-  background-position: center;
 }
