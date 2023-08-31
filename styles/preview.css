@@ -133,6 +133,29 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+.alert-box {
+  display: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 397px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background-color: #333;
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 870px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.link-copy {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fafafa;
+}
+
 @media (max-width: 500px) {
   body,
   .purple {
