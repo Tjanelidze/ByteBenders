@@ -166,6 +166,7 @@ header {
 /* left side of the main */
 
 .visual-left {
+  position: relative;
   justify-content: center;
   padding: 80px;
 }
@@ -358,4 +359,73 @@ header {
 .save:hover {
   background: #3c11e9;
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);
+}
+.profile-wrapper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 320px;
+}
+.image-wrapper {
+  margin-top: 110px;
+  margin-bottom: 10px;
+  width: 120px;
+  height: 130px;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.fulName {
+  color: #333;
+  font-size: 19px;
+  font-weight: 700;
+}
+.mail-name {
+  color: #737373;
+  font-size: 16px;
+  font-weight: 400;
+}
+.fullName-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 200px;
+  height: 100px;
+}
+
+.added-link-rectangle {
+  width: 237px;
+  height: 44px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 43.8%;
+}
+
+.icon-github-rectangle {
+  width: 20px;
+  filter: brightness(10);
+}
+
+.rectangle-h {
+  margin-right: auto;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.icon-arrow-right {
+  width: 20px;
+  filter: brightness(10);
 }

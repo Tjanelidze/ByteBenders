@@ -27,6 +27,8 @@ let boxColors = {
   "Stack Overflow": "#EC7100",
 };
 
+////////////////////////////////////////
+
 newLinkBtn.addEventListener("click", function () {
   emptyDesign.style.display = "none";
   const newLinkBox = document.createElement("div");
