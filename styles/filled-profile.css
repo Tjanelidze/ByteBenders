@@ -313,10 +313,13 @@ input[type="text"] {
   text-align: center;
   border: none;
   border-radius: 12px;
-  background: #efebff;
+  background-image: url("../assets/images/icon-upload-image.svg");
+  background-position: 50% 20%;
+  background-size: 20%;
+  background-repeat: no-repeat;
   width: 40%;
   padding: 61px 15px;
-  margin: 0 20px 0 100px;
+  margin: 0 20px 8px 100px;
   cursor: pointer;
 }
 
@@ -343,4 +346,9 @@ input[type="text"] {
   max-height: 200px;
   display: block;
   margin-top: 10px;
+}
+
+.upload-photo-background {
+  background-size: cover;
+  background-position: center;
 }
