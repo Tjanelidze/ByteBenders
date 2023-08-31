@@ -36,7 +36,15 @@ function updateFileName() {
 uploadInput.addEventListener("change", updateFileName);
 
 saveButton.addEventListener("click", () => {
-  console.log(firstNameInput.value);
-  console.log(lastNameInput.value);
-  console.log(emailInput);
+  let objUserInformation = {};
+
+  objUserInformation["Firstname"] = firstNameInput.value;
+  objUserInformation["lastName"] = lastNameInput.value;
+  objUserInformation["email"] = emailInput.value;
+  localStorage.setItem("profile details", JSON.stringify(objUserInformation));
+  console.log(objUserInformation);
 });
+
+
+
+
