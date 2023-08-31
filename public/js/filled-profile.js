@@ -6,7 +6,9 @@ const emailInput = document.querySelector("#email-blank");
 
 function updateFileName() {
   const inputElement = document.getElementById("upload-photo");
+
   const labelElement = inputElement.nextElementSibling;
+
   const uploadPhotoWrapper = document.querySelector(".upload-photo");
 
   if (inputElement.files && inputElement.files[0]) {
@@ -32,12 +34,18 @@ function updateFileName() {
 
     reader.readAsDataURL(inputElement.files[0]);
   } else {
+
+    uploadPhotoWrapper.style.backgroundImage =
+      "url('../assets/images/icon-upload-image.svg')";
+    uploadPhotoWrapper.classList.remove("upload-photo-background");
+
     // Remove the uploaded image and show the label
     const existingImage = uploadPhotoWrapper.querySelector(".uploaded-image");
     if (existingImage) {
       existingImage.remove();
     }
     labelElement.style.display = "block";
+
   }
 }
 
