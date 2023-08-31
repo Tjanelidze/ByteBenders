@@ -43,6 +43,7 @@ header {
 
 .header-details {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
@@ -135,6 +136,10 @@ header {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.preview-img {
+  display: none;
 }
 
 .preview:hover {

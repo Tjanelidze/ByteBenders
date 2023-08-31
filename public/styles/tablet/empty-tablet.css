@@ -19,6 +19,10 @@
   .visual-left {
     display: none;
   }
+
+  .header-details {
+    align-items: center;
+  }
 }
 @media screen and (max-height: 887px) {
   .main-part {
