@@ -44,7 +44,3 @@ saveButton.addEventListener("click", () => {
   localStorage.setItem("profile details", JSON.stringify(objUserInformation));
   console.log(objUserInformation);
 });
-
-
-
-
