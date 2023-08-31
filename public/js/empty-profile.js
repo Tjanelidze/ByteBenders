@@ -5,16 +5,32 @@ let upperMain = document.querySelector(".upper-main");
 let inputLink = document.querySelector("#input-link");
 let phonePart = document.querySelector("#rectangle-id");
 let phone = document.querySelector(".img-wrapper");
+let saveButton = document.querySelector(".save");
+let footer = document.querySelector(".end");
+////******************************************************* */
 
-// Create a tiny function for add new link button
-let newLink = () => {
-  emptyDesign.style.display = "none";
+let boxColors = {
+  GitHub: "#1A1A1A",
+  "Frontend Mentor": "#FFF",
+  Twitter: "#43B7E9",
+  LinkedIn: "#2D68FF",
+  YouTube: "#EE3939",
+  Facebook: "#2442AC",
+  Twitch: "#EE3FC8",
+  "Dev.to": "#333",
+  Codewars: "#8A1A50",
+  Codepen: "#302267",
+  freeCodeCamp: "#302267",
+  GitLab: "#EB4925",
+  Hashnode: "#0330D1",
+  "Stack Overflow": "#EC7100",
 };
 
 newLinkBtn.addEventListener("click", function () {
-  newLink();
+  emptyDesign.style.display = "none";
   const newLinkBox = document.createElement("div");
   const currentLinks = upperMain.querySelectorAll(".link-box").length;
+
   if (currentLinks >= 5) {
     return;
   }
@@ -70,14 +86,12 @@ newLinkBtn.addEventListener("click", function () {
       </div>
     </div>
     `;
-
   upperMain.appendChild(newLinkBox);
   updateLinkNumeration();
 });
 
 function updateLinkNumeration() {
   const linkBoxes = upperMain.querySelectorAll(".link-box");
-
   linkBoxes.forEach((linkBox, index) => {
     const linkNumber = index + 1;
     const linkNumberElement = linkBox.querySelector(".custom-link-p");
@@ -87,7 +101,20 @@ function updateLinkNumeration() {
   });
 }
 
+//remove buttons  and save button background
+
 upperMain.addEventListener("click", (event) => {
+  const currentLinks = upperMain.querySelectorAll(".link-box").length;
+  if (currentLinks === 0) {
+    let elementsToRemove = document.querySelectorAll(".added-link-rectangle");
+    elementsToRemove.forEach(function (element) {
+      element.remove();
+      footer.classList.remove("buttonActive");
+    });
+  } else {
+    footer.classList.add("buttonActive");
+  }
+
   if (event.target.classList.contains("custom-remove")) {
     const linkBox = event.target.closest(".link-box");
     if (linkBox) {
@@ -95,7 +122,10 @@ upperMain.addEventListener("click", (event) => {
       updateLinkNumeration();
     }
   }
+  upperMain.click();
 });
+
+//dropdown icon
 
 upperMain.addEventListener("input", (event) => {
   if (event.target && event.target.classList.contains("customization-area")) {
@@ -106,34 +136,21 @@ upperMain.addEventListener("input", (event) => {
   }
 });
 
-upperMain.addEventListener("click", () => {
-  const boxes = upperMain.querySelectorAll(".dropDown");
-  let arrayOfboxes = [];
+// color boxes
 
-  boxes.forEach((box) => {
-    if (arrayOfboxes.indexOf(box.value) === -1) {
-      arrayOfboxes.push(box.value);
+upperMain.addEventListener("click", () => {
+  const selectionInputs = upperMain.querySelectorAll(".dropDown");
+
+  let arrayOfboxes = [];
+  selectionInputs.forEach((element) => {
+    if (arrayOfboxes.indexOf(element.value) === -1) {
+      arrayOfboxes.push(element.value);
     }
+
     let elementsToRemove = document.querySelectorAll(".added-link-rectangle");
     elementsToRemove.forEach(function (element) {
       element.remove();
     });
-    let boxColors = {
-      GitHub: "#1A1A1A",
-      "Frontend Mentor": "#FFF",
-      Twitter: "#43B7E9",
-      LinkedIn: "#2D68FF",
-      YouTube: "#EE3939",
-      Facebook: "#2442AC",
-      Twitch: "#EE3FC8",
-      "Dev.to": "#333",
-      Codewars: "#8A1A50",
-      Codepen: "#302267",
-      freeCodeCamp: "#302267",
-      GitLab: "#EB4925",
-      Hashnode: "#0330D1",
-      "Stack Overflow": "#EC7100",
-    };
 
     arrayOfboxes.forEach((element, index) => {
       let newBox = document.createElement("div");
@@ -181,5 +198,32 @@ upperMain.addEventListener("click", () => {
       newBox.appendChild(iconArrow);
       phone.appendChild(newBox);
     });
+  });
+
+  //to dont repeat boxes
+
+  selectionInputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      if (arrayOfboxes.includes(input.value)) {
+        const linkBox = input.closest(".link-box");
+        linkBox.remove();
+        upperMain.click();
+        updateLinkNumeration();
+      }
+    });
+  });
+});
+
+saveButton.addEventListener("click", () => {
+  const allLinkBoxes = upperMain.querySelectorAll(".custom-selections");
+  let dataObj = {};
+  allLinkBoxes.forEach((element) => {
+    socialNetwork = element.children[0].children[1].value;
+    link = element.children[1].children[1].value;
+    if (link == "") {
+      return;
+    }
+    dataObj[socialNetwork] = link;
+    localStorage.setItem("links", JSON.stringify(dataObj));
   });
 });

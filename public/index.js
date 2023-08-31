@@ -10,8 +10,28 @@ const regexForPassword = /.{8,}/;
 
 //form
 
-formOfLogin.addEventListener("submit", (event) => {
+formOfLogin.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  const formData = new FormData(formOfLogin);
+  const payload = {};
+  formData.forEach((value, key) => {
+    payload[key] = value;
+  });
+
+  const response = await fetch("http://localhost:3000/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const responseData = await response.json();
+
+  if (response.status === 200) {
+    window.location.href = "/pages/empty-profile.html";
+  }
 });
 
 loginButton.addEventListener("click", () => {

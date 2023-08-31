@@ -1,3 +1,9 @@
+const saveButton = document.querySelector(".save");
+const firstNameInput = document.querySelector("#username");
+const lastNameInput = document.querySelector("#lastname");
+const emailInput = document.querySelector("#email-blank");
+//////////////////////////////////////////////////////////////
+
 function updateFileName() {
   const inputElement = document.getElementById("upload-photo");
   const labelElement = inputElement.nextElementSibling;
@@ -19,7 +25,7 @@ function updateFileName() {
 
       // Add the uploaded image to the wrapper
       uploadPhotoWrapper.appendChild(uploadedImage);
-
+      console.log(uploadedImage);
       // Hide the label
       labelElement.style.display = "none";
     };
@@ -34,3 +40,10 @@ function updateFileName() {
     labelElement.style.display = "block";
   }
 }
+
+saveButton.addEventListener("click", () => {
+  console.log(firstNameInput.value);
+
+  console.log(lastNameInput.value);
+  console.log(emailInput);
+});
