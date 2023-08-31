@@ -265,7 +265,7 @@ header {
   width: 11em;
 }
 
-input[type="text"] {
+.input-basic {
   border-radius: 8px;
   border: 1px solid #d9d9d9;
   background: #fff;
@@ -315,11 +315,11 @@ input[type="text"] {
   border-radius: 12px;
   background-image: url("../assets/images/icon-upload-image.svg");
   background-position: 50% 20%;
-  background-size: 20%;
+  background-size: 30%;
   background-repeat: no-repeat;
   width: 40%;
   padding: 61px 15px;
-  margin: 0 20px 8px 100px;\
+  margin: 0 20px 8px 100px;
   cursor: pointer;
 }
 
