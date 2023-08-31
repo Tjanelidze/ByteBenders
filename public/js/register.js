@@ -12,6 +12,28 @@ const regexForEmail = /^.+@.+\..+$/;
 
 //************************************************************** */
 
+formOfRegistration.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(formOfRegistration);
+  const payload = {};
+  formData.forEach((value, key) => {
+    payload[key] = value;
+  });
+
+  const response = await fetch("http://localhost:3000/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (response.status === 201) {
+    window.location.href = "http://localhost:3000/";
+  }
+});
+
 createNewAcountButton.addEventListener("click", () => {
   if (!regexForEmail.test(emailInput.value)) {
     emailInput.parentElement.classList.add("error");
@@ -69,5 +91,3 @@ document.addEventListener("click", (event) => {
     }
   }
 });
-
-

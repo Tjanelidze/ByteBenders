@@ -308,6 +308,10 @@ header {
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
+.buttonActive .save {
+  opacity: 1;
+  background-color: #633cff;
+}
 .save:hover {
   background: #3c11e9;
   box-shadow: 0px 0px 32px 0px rgba(32, 6, 126, 0.25);

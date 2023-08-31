@@ -19,7 +19,7 @@
       <div class="wrapper">
         <h1 class="Create-account">Create account</h1>
         <p class="get-you-started">Let’s get you started sharing your links!</p>
-        <form action="/submit" method="post" class="form-Of-registracion">
+        <form action="/register" method="post" class="form-Of-registracion">
           <div class="email-wrapper">
             <label for="Email address" class="email-label">Email address</label>
             <img
@@ -29,6 +29,7 @@
             />
             <input
               type="email"
+              name="email"
               class="email-input allInput"
               placeholder="e.g. alex@email.com"
             />
@@ -51,6 +52,7 @@
             />
             <input
               type="password"
+              name="password"
               class="Create-password-input allInput password-input"
               placeholder="At least 8 characters"
             />
@@ -74,6 +76,7 @@
             />
             <input
               type="password"
+              name="confirm"
               class="Confirm-password-input allInput password-input"
               placeholder="At least 8 characters"
             />
