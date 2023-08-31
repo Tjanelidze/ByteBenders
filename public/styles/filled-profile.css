@@ -319,7 +319,7 @@ input[type="text"] {
   background-repeat: no-repeat;
   width: 40%;
   padding: 61px 15px;
-  margin: 0 20px 8px 100px;
+  margin: 0 20px 8px 100px;\
   cursor: pointer;
 }
 
