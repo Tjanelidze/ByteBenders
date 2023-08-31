@@ -63,4 +63,17 @@
     width: auto;
     padding: 0 5px;
   }
+
+  /* header preview component change on mobile size */
+  .preview {
+    padding: 11px 16px;
+  }
+
+  .preview-img {
+    display: block;
+  }
+
+  .preview-p {
+    display: none;
+  }
 }
