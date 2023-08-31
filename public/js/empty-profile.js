@@ -105,49 +105,6 @@ function updateLinkNumeration() {
   });
 }
 
-//remove buttons  and save button background
-
-upperMain.addEventListener("click", (event) => {
-  const currentLinks = upperMain.querySelectorAll(".link-box").length;
-  if (currentLinks === 0) {
-    let elementsToRemove = document.querySelectorAll(".added-link-rectangle");
-    elementsToRemove.forEach(function (element) {
-      element.remove();
-      footer.classList.remove("buttonActive");
-    });
-  } else {
-    footer.classList.add("buttonActive");
-  }
-
-  if (event.target.classList.contains("custom-remove")) {
-    const linkBox = event.target.closest(".link-box");
-    if (linkBox) {
-      linkBox.remove();
-      updateLinkNumeration();
-    }
-  }
-  upperMain.click();
-});
-
-//dropdown icon
-
-upperMain.addEventListener("input", (event) => {
-  if (
-    event.target.value !== "" &&
-    event.target.classList.contains("link-inputs")
-  ) {
-    const linkBox = event.target.closest(".custom-selections");
-    linkBox.classList.remove("error");
-  }
-
-  if (event.target && event.target.classList.contains("dropDown")) {
-    event.target.parentElement.children[1].style.backgroundImage = `url(../assets/images/icon-${event.target.value.replace(
-      /\s+/g,
-      "-"
-    )}.svg), url(../assets/images/icon-chevron-down.svg)`;
-  }
-});
-
 // color boxes
 
 upperMain.addEventListener("click", () => {
@@ -155,10 +112,10 @@ upperMain.addEventListener("click", () => {
 
   let arrayOfboxes = [];
   selectionInputs.forEach((element) => {
-    if (arrayOfboxes.indexOf(element.value) === -1) {
-      arrayOfboxes.push(element.value);
-    }
-
+    // if (arrayOfboxes.indexOf(element.value) === -1) {
+    //   arrayOfboxes.push(element.value);
+    // }
+    arrayOfboxes.push(element.value);
     let elementsToRemove = document.querySelectorAll(".added-link-rectangle");
     elementsToRemove.forEach(function (element) {
       element.remove();
@@ -212,22 +169,59 @@ upperMain.addEventListener("click", () => {
     });
   });
 
-  //to dont repeat boxes  ///eror
+  upperMain.addEventListener("input", (event) => {
+    if (
+      event.target.value !== "" &&
+      event.target.classList.contains("link-inputs")
+    ) {
+      const linkBox = event.target.closest(".custom-selections");
+      linkBox.classList.remove("error");
+    }
 
-  selectionInputs.forEach((input) => {
-    input.addEventListener("input", () => {
-      upperMain.click();
-      if (arrayOfboxes.includes(input.value)) {
-        const linkBox = input.closest(".link-box");
-        linkBox.remove();
-        let index = arrayOfboxes.indexOf(input.value);
-
-        arrayOfboxes.splice(index, 1);
-
-        upperMain.click();
-      }
-    });
+    if (event.target && event.target.classList.contains("dropDown")) {
+      event.target.parentElement.children[1].style.backgroundImage = `url(../assets/images/icon-${event.target.value.replace(
+        /\s+/g,
+        "-"
+      )}.svg), url(../assets/images/icon-chevron-down.svg)`;
+    }
   });
+
+  // selectionInputs.forEach((input) => {
+  //   input.addEventListener("input", () => {
+  //     upperMain.click();
+  //     if (arrayOfboxes.includes(input.value)) {
+  //       const linkBox = input.closest(".link-box");
+  //       linkBox.remove();
+  //       let index = arrayOfboxes.indexOf(input.value);
+
+  //       arrayOfboxes.splice(index, 1);
+
+  //       upperMain.click();
+  //     }
+  //   });
+  // });
+});
+
+upperMain.addEventListener("click", (event) => {
+  const currentLinks = upperMain.querySelectorAll(".link-box").length;
+  if (currentLinks === 0) {
+    let elementsToRemove = document.querySelectorAll(".added-link-rectangle");
+    elementsToRemove.forEach(function (element) {
+      element.remove();
+      footer.classList.remove("buttonActive");
+    });
+  } else {
+    footer.classList.add("buttonActive");
+  }
+
+  if (event.target.classList.contains("custom-remove")) {
+    const linkBox = event.target.closest(".link-box");
+    if (linkBox) {
+      linkBox.remove();
+      updateLinkNumeration();
+    }
+  }
+  upperMain.click();
 });
 
 saveButton.addEventListener("click", () => {

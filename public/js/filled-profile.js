@@ -9,6 +9,7 @@ const fulName = document.querySelector(".fulName");
 const emailUnderFullname = document.querySelector(".mail-name");
 const fullNameWrapper = document.querySelector(".fullName-wrapper");
 const phone = document.querySelector(".visual-left");
+const image = localStorage.getItem("thumbnail");
 
 ////////////////////////////////////////////////////
 
@@ -130,5 +131,15 @@ saveButton.addEventListener("click", () => {
   fulName.innerHTML = `${profileDetails["Firstname"]} ${profileDetails["lastName"]}`;
   emailUnderFullname.innerHTML = profileDetails["email"];
   fullNameWrapper.style.background = "white";
-  console.log(profileDetails);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  let profileDetails = JSON.parse(localStorage.getItem("profile details"));
+
+  fulName.innerHTML = `${profileDetails["Firstname"]} ${profileDetails["lastName"]}`;
+  emailUnderFullname.innerHTML = profileDetails["email"];
+  fullNameWrapper.style.background = "white";
+
+  uploadPhotoWrapper.style.backgroundImage = `url(${image}) `;
+  imageWrapper.style.backgroundImage = `url(${image})`;
 });
