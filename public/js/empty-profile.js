@@ -7,6 +7,7 @@ let phonePart = document.querySelector("#rectangle-id");
 let phone = document.querySelector(".img-wrapper");
 let saveButton = document.querySelector(".save");
 let footer = document.querySelector(".end");
+let main = document.querySelector(".main");
 ////******************************************************* */
 
 let boxColors = {
@@ -74,11 +75,12 @@ newLinkBtn.addEventListener("click", function () {
           </select>
         </div>
         <div class="cstm bottom-selection">
+        <p class=links-error-p>Can’t be empty</p>
           <label for="input-link">Link</label>
           <input
             type="text"
             name="input-link"
-            class="customization-area"
+            class="customization-area link-inputs"
             id="input-link"
             placeholder="e.g. https://www.github.com/johnappleseed"
           />
@@ -128,7 +130,15 @@ upperMain.addEventListener("click", (event) => {
 //dropdown icon
 
 upperMain.addEventListener("input", (event) => {
-  if (event.target && event.target.classList.contains("customization-area")) {
+  if (
+    event.target.value !== "" &&
+    event.target.classList.contains("link-inputs")
+  ) {
+    const linkBox = event.target.closest(".custom-selections");
+    linkBox.classList.remove("error");
+  }
+
+  if (event.target && event.target.classList.contains("dropDown")) {
     event.target.parentElement.children[1].style.backgroundImage = `url(../assets/images/icon-${event.target.value.replace(
       /\s+/g,
       "-"
@@ -200,15 +210,19 @@ upperMain.addEventListener("click", () => {
     });
   });
 
-  //to dont repeat boxes
+  //to dont repeat boxes  ///eror
 
   selectionInputs.forEach((input) => {
     input.addEventListener("input", () => {
+      upperMain.click();
       if (arrayOfboxes.includes(input.value)) {
         const linkBox = input.closest(".link-box");
         linkBox.remove();
+        let index = arrayOfboxes.indexOf(input.value);
+
+        arrayOfboxes.splice(index, 1);
+
         upperMain.click();
-        updateLinkNumeration();
       }
     });
   });
@@ -216,11 +230,14 @@ upperMain.addEventListener("click", () => {
 
 saveButton.addEventListener("click", () => {
   const allLinkBoxes = upperMain.querySelectorAll(".custom-selections");
+
   let dataObj = {};
   allLinkBoxes.forEach((element) => {
     socialNetwork = element.children[0].children[1].value;
-    link = element.children[1].children[1].value;
-    if (link == "") {
+    link = element.children[1].children[2].value;
+
+    if (link === "") {
+      element.classList.add("error");
       return;
     }
     dataObj[socialNetwork] = link;

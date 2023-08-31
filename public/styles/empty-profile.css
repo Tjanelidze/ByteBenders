@@ -414,6 +414,7 @@ header {
   flex-direction: column;
   gap: 2px;
   width: 100%;
+  position: relative;
 }
 
 .cstm label {
@@ -423,14 +424,15 @@ header {
 }
 
 #platform-selection {
+  cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: url(../assets/images/icon-github.svg),
     url("../assets/images/icon-chevron-down.svg");
   background-repeat: no-repeat;
-  background-size: 3%, 16px;
-  background-position: 2%, 97%;
+  background-size: 16px;
+  background-position: 8px, 97%;
   padding: 12px 30px;
   border-radius: 8px;
   border: 1px solid #d9d9d9;
@@ -438,6 +440,11 @@ header {
   color: #333;
   font-size: 16px;
   font-weight: 400;
+}
+#platform-selection:focus {
+  border: 1px solid #633cff;
+  box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+  outline: none;
 }
 
 .gitHub {
@@ -452,4 +459,32 @@ header {
   background-image: url(../assets/images/icon-link.svg);
   background-repeat: no-repeat;
   background-position: 8px 11px;
+  cursor: pointer;
+}
+#input-link:focus {
+  border: 1px solid #633cff;
+  box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+  outline: none;
+}
+
+.links-error-p {
+  display: none;
+  position: absolute;
+  top: 29px;
+  right: 16px;
+  color: #ff3939;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.error .links-error-p {
+  display: block;
+}
+.error #input-link {
+  padding-right: 110px;
+  border: 1px solid #ff3939;
+}
+.error #input-link:focus {
+  box-shadow: 0px 0px 0px 0px rgba(99, 60, 255, 0.25);
+  outline: none;
 }
