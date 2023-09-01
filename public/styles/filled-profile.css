@@ -270,7 +270,6 @@ header {
 .custom-file-input {
   display: block;
   margin: 0 auto;
-  background-color: inherit;
   color: #633cff;
   cursor: pointer;
   text-align: center;

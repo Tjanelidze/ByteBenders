@@ -1,6 +1,7 @@
 body {
   background-color: #fafafa;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   position: relative;
 }
@@ -54,7 +55,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -30%);
 }
 
 .user-details {
@@ -63,7 +64,7 @@ body {
   align-items: center;
 }
 
-.user-photo {
+.user-photo-div {
   width: 104px;
   height: 104px;
   border-radius: 104px;
@@ -87,51 +88,8 @@ body {
 .user-social-links {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
-}
-
-.link-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.link-box:hover .arrow-icon {
-  transform: translate(25%);
-}
-
-.user-github {
-  background-color: #1a1a1a;
-}
-
-.user-youtube {
-  background-color: #ee3939;
-}
-
-.user-linkedin {
-  background-color: #2d68ff;
-}
-
-.icon-pr {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.paragraph {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.arrow-icon {
-  width: 10%;
-  transition: transform 0.3s ease-in-out;
 }
 
 .alert-box {
@@ -154,6 +112,43 @@ body {
   font-weight: 600;
   font-size: 16px;
   color: #fafafa;
+}
+
+.added-link-rectangle {
+  width: 237px;
+  height: 56px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.added-link-rectangle:hover .icon-arrow-right {
+  transform: translate(25%);
+}
+
+.icon-github-rectangle {
+  width: 20px;
+  filter: brightness(10);
+}
+
+.rectangle-h {
+  margin-right: auto;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.icon-arrow-right {
+  width: 10%;
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(10);
 }
 
 @media (max-width: 500px) {

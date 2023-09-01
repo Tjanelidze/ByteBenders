@@ -206,7 +206,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fullNameWrapper.style.background = "white";
 
   uploadPhotoWrapper.style.backgroundImage = `url(${image}) `;
+  uploadPhotoWrapper.style.backgroundPosition = "center";
   imageWrapper.style.backgroundImage = `url(${image})`;
+  imageWrapper.style.backgroundPosition = "center";
 });
 
 ////////////////////////////////////////////////////////////////////

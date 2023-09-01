@@ -247,8 +247,6 @@ upperMain.addEventListener("input", (event) => {
   updateLinkNumeration();
 });
 
-
-
 // Dispatch the input event
 upperMain.dispatchEvent(new InputEvent("input", { bubbles: true }));
 
@@ -273,12 +271,6 @@ saveButton.addEventListener("click", () => {
 
   /////////////////////////////////////////
 
-  let colorfulBoxes = document.querySelectorAll(".rectangle-h");
-  let colorfulBoxesContent = [...colorfulBoxes].map((box) => box.innerHTML);
-  localStorage.setItem("arrayOfBoxes", JSON.stringify(colorfulBoxesContent));
-
-  ////////////////////////////////////
-
   let dataObj = {};
   allLinkBoxes.forEach((element) => {
     socialNetwork = element.children[0].children[1].value;
@@ -294,14 +286,12 @@ saveButton.addEventListener("click", () => {
   });
 });
 
-
-
 //////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
-  arrayOfboxes = JSON.parse(localStorage.getItem("arrayOfBoxes"));
-  createColorfulBoxes(arrayOfboxes);
-
+  let temp = JSON.parse(localStorage.getItem("links"));
+  let arrayOfBoxes = Object.keys(temp);
+  createColorfulBoxes(arrayOfBoxes);
 
   ///////////////////////////////////////
   let colorfulBoxes = document.querySelectorAll(".rectangle-h");
