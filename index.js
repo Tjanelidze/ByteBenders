@@ -14,25 +14,27 @@ const regexForPassword = /.{8,}/;
 formOfLogin.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!emailInput.value) {
-    console.log(emailInput.parentElement.children[3]);
     emailInput.parentElement.children[3].innerHTML = "can't be empty";
     emailInput.parentElement.classList.add("error");
-    console.log(emailInput.parentElement.children[3]);
+    return;
   }
 
   // password input error
   if (!regexForPassword.test(passwordInput.value)) {
     passwordInput.parentElement.classList.add("error");
+    return;
   } else {
     if (user.email !== emailInput.value) {
       emailInput.parentElement.children[3].innerHTML = "Email Failed";
       emailInput.parentElement.classList.add("error");
+      return;
     }
     if (
       user.email == emailInput.value &&
       user.password != passwordInput.value
     ) {
       passwordInput.parentElement.classList.add("error");
+      return;
     }
     if (
       user.email == emailInput.value &&
