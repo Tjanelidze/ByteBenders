@@ -481,7 +481,6 @@ input {
 
 .error #username {
   border: 1px solid #ff3939;
-  padding-right: 110px;
 }
 
 .error #username:focus {
@@ -505,7 +504,6 @@ input {
 
 .error #lastname {
   border: 1px solid #ff3939;
-  padding-right: 110px;
 }
 
 .error #lastname:focus {
@@ -529,7 +527,6 @@ input {
 
 .error #email-blank {
   border: 1px solid #ff3939;
-  padding-right: 110px;
 }
 
 .error #email-blank:focus {

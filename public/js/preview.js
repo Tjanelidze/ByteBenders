@@ -7,6 +7,7 @@ const imageBox = document.querySelector(".user-photo-div");
 const userDetails = JSON.parse(localStorage.getItem("profile details"));
 const image = localStorage.getItem("thumbnail");
 let linksInformation = JSON.parse(localStorage.getItem("links"));
+let buttons = document.querySelectorAll(".added-link-rectangle");
 
 /////////////////////////////////////////////////////
 
@@ -61,6 +62,8 @@ function createColorfulBoxes(arr) {
 }
 /////////////////////////////////////////
 shareBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(window.location.href);
+
   alertBox.style.display = "flex";
   setTimeout(() => {
     alertBox.style.display = "none";
@@ -86,10 +89,28 @@ if (linksInformation === null) {
   createColorfulBoxes(arrayForColorfulBoxes);
 }
 
+////////////////////////
+
 if (image !== null) {
   imageBox.style.background = `url(${image})`;
   imageBox.style.backgroundSize = "cover";
   imageBox.style.backgroundPosition = "center";
-}else{
-  
+} else {
+  imageBox.style.background = "url(../assets/images/profile-image.png)";
+  imageBox.style.backgroundSize = "cover";
+  imageBox.style.border = "none";
+}
+
+///////////////////////////////
+
+if (linksInformation !== null) {
+  let buttons = document.querySelectorAll(".added-link-rectangle");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let buttonName = button.children[1].textContent;
+      console.log();
+      window.location.href = linksInformation[buttonName];
+    });
+  });
 }

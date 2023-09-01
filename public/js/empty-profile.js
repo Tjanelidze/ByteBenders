@@ -163,7 +163,6 @@ function updateLinkNumeration() {
 
 upperMain.addEventListener("click", () => {
   const selectionInputs = upperMain.querySelectorAll(".dropDown");
-
   let arrayOfboxes = [];
 
   selectionInputs.forEach((element) => {

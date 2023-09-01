@@ -34,9 +34,6 @@ formOfRegistration.addEventListener("submit", async (event) => {
   }
 });
 
-
-
-
 //create new acount
 
 createNewAcountButton.addEventListener("click", () => {

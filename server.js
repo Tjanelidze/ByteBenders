@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
@@ -16,7 +17,8 @@ app.use(
 
 mongoose
   .connect(
-    "mongodb+srv://avtogvenetadze24:LD0FlbVK4ln7Cla9@cluster0.poarz23.mongodb.net/mydb",
+    process.env.MONGODB_URI ||
+      "mongodb+srv://avtogvenetadze24:LD0FlbVK4ln7Cla9@cluster0.poarz23.mongodb.net/mydb",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
