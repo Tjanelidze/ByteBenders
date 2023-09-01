@@ -290,8 +290,10 @@ saveButton.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   let temp = JSON.parse(localStorage.getItem("links"));
-  let arrayOfBoxes = Object.keys(temp);
-  createColorfulBoxes(arrayOfBoxes);
+  if (temp !== null) {
+    let arrayOfBoxes = Object.keys(temp);
+    createColorfulBoxes(arrayOfBoxes);
+  }
 
   ///////////////////////////////////////
   let colorfulBoxes = document.querySelectorAll(".rectangle-h");

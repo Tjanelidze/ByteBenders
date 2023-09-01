@@ -389,6 +389,7 @@ input {
   border-radius: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .fulName {
   color: #333;
