@@ -34,6 +34,11 @@ formOfLogin.addEventListener("submit", async (event) => {
   }
 });
 
+
+
+
+//login button
+
 loginButton.addEventListener("click", () => {
   //email error
   if (emailInput.value == "") {

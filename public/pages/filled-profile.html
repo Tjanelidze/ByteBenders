@@ -60,9 +60,11 @@
             </button>
           </a>
         </div>
-        <div class="preview">
-          <button class="preview-p">Preview</button>
-        </div>
+        <a href="./preview.html"
+          ><div class="preview">
+            <button class="preview-p">Preview</button>
+          </div></a
+        >
       </header>
       <!-- From here we have main part of page -->
       <main class="main">
@@ -118,6 +120,7 @@
                   name="username"
                   placeholder="e.g. John"
                 />
+                <p class="username-eror-p">Can’t be empty</p>
               </div>
               <div class="blnks profile-blanket-last-Name">
                 <label for="lastname">Last name*</label>
@@ -128,7 +131,9 @@
                   name="lastname"
                   placeholder="e.g. Appleseed"
                 />
+                <p class="lastname-eror-p">Can’t be empty</p>
               </div>
+
               <div class="blnks profile-blanket-email">
                 <label for="email-blank">Email</label>
                 <input
@@ -138,12 +143,21 @@
                   name="email-blank"
                   placeholder="e.g. email@example.com"
                 />
+                <p class="email-blank-eror-p">Can’t be empty</p>
               </div>
             </div>
           </div>
           <div class="end">
             <button class="save">Save</button>
           </div>
+        </div>
+        <div class="your-changes-are-succesfull">
+          <img
+            class="icon-Your-changes"
+            src="../assets/images/icon-for-succesfull-changes.png"
+            alt=""
+          />
+          <p>Your changes have been successfully saved!</p>
         </div>
       </main>
     </div>

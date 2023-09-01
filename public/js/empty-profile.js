@@ -8,6 +8,7 @@ let phone = document.querySelector(".img-wrapper");
 let saveButton = document.querySelector(".save");
 let footer = document.querySelector(".end");
 let main = document.querySelector(".main");
+let alertOfSucces = document.querySelector(".your-changes-are-succesfull");
 ////******************************************************* */
 
 let boxColors = {
@@ -28,6 +29,57 @@ let boxColors = {
 };
 
 ////////////////////////////////////////
+
+function createColorfulBoxes(array) {
+  array.forEach((element, index) => {
+    let newBox = document.createElement("div");
+    newBox.classList.add("added-link-rectangle");
+    newBox.style.background = boxColors[element];
+
+    switch (index) {
+      case 0:
+        newBox.style.top = "43.8%";
+        break;
+      case 1:
+        newBox.style.top = "53.8%";
+        break;
+      case 2:
+        newBox.style.top = "63.8%";
+        break;
+      case 3:
+        newBox.style.top = "73.8%";
+        break;
+      case 4:
+        newBox.style.top = "83.8%";
+        break;
+    }
+
+    let image = document.createElement("img");
+    image.src = `../assets/images/icon-${element.replace(/\s+/g, "-")}.svg`;
+    image.classList.add("icon-github-rectangle");
+    let nameofBox = document.createElement("h4");
+    nameofBox.textContent = element;
+    nameofBox.classList.add("rectangle-h");
+
+    let iconArrow = document.createElement("img");
+    iconArrow.src = "../assets/images/icon-arrow-right.svg";
+    iconArrow.classList.add("icon-arrow-right");
+
+    if (element == "Frontend Mentor") {
+      image.style.filter = "brightness(0%)";
+      iconArrow.style.filter = "brightness(0%)";
+      nameofBox.style.color = "black";
+      newBox.style.border = "1px solid  #D9D9D9";
+    }
+
+    newBox.appendChild(image);
+    newBox.appendChild(nameofBox);
+    newBox.appendChild(iconArrow);
+    phone.appendChild(newBox);
+  });
+}
+
+//creating new inputs box
 
 newLinkBtn.addEventListener("click", function () {
   emptyDesign.style.display = "none";
@@ -94,6 +146,8 @@ newLinkBtn.addEventListener("click", function () {
   updateLinkNumeration();
 });
 
+//numeration
+
 function updateLinkNumeration() {
   const linkBoxes = upperMain.querySelectorAll(".link-box");
   linkBoxes.forEach((linkBox, index) => {
@@ -105,78 +159,41 @@ function updateLinkNumeration() {
   });
 }
 
-// color boxes
+// colorful  boxes
 
 upperMain.addEventListener("click", () => {
   const selectionInputs = upperMain.querySelectorAll(".dropDown");
 
   let arrayOfboxes = [];
+
   selectionInputs.forEach((element) => {
-    // if (arrayOfboxes.indexOf(element.value) === -1) {
-    //   arrayOfboxes.push(element.value);
-    // }
-    arrayOfboxes.push(element.value);
+    if (arrayOfboxes.indexOf(element.value) === -1) {
+      arrayOfboxes.push(element.value);
+    }
+
+    //clear existing color boxes
+
     let elementsToRemove = document.querySelectorAll(".added-link-rectangle");
     elementsToRemove.forEach(function (element) {
       element.remove();
     });
 
-    arrayOfboxes.forEach((element, index) => {
-      let newBox = document.createElement("div");
-      newBox.classList.add("added-link-rectangle");
-      newBox.style.background = boxColors[element];
-
-      switch (index) {
-        case 0:
-          newBox.style.top = "43.8%";
-          break;
-        case 1:
-          newBox.style.top = "53.8%";
-          break;
-        case 2:
-          newBox.style.top = "63.8%";
-          break;
-        case 3:
-          newBox.style.top = "73.8%";
-          break;
-        case 4:
-          newBox.style.top = "83.8%";
-          break;
-      }
-
-      let image = document.createElement("img");
-      image.src = `../assets/images/icon-${element.replace(/\s+/g, "-")}.svg`;
-      image.classList.add("icon-github-rectangle");
-      let nameofBox = document.createElement("h4");
-      nameofBox.textContent = element;
-      nameofBox.classList.add("rectangle-h");
-
-      let iconArrow = document.createElement("img");
-      iconArrow.src = "../assets/images/icon-arrow-right.svg";
-      iconArrow.classList.add("icon-arrow-right");
-
-      if (element == "Frontend Mentor") {
-        image.style.filter = "brightness(0%)";
-        iconArrow.style.filter = "brightness(0%)";
-        nameofBox.style.color = "black";
-        newBox.style.border = "1px solid  #D9D9D9";
-      }
-
-      newBox.appendChild(image);
-      newBox.appendChild(nameofBox);
-      newBox.appendChild(iconArrow);
-      phone.appendChild(newBox);
-    });
+    //creating  new colorful  boxes
+    createColorfulBoxes(arrayOfboxes);
   });
+
+  //removing errors
 
   upperMain.addEventListener("input", (event) => {
     if (
       event.target.value !== "" &&
       event.target.classList.contains("link-inputs")
     ) {
-      const linkBox = event.target.closest(".custom-selections");
+      const linkBox = event.target.closest(".cstm");
       linkBox.classList.remove("error");
     }
+
+    //little icons in social network inputs
 
     if (event.target && event.target.classList.contains("dropDown")) {
       event.target.parentElement.children[1].style.backgroundImage = `url(../assets/images/icon-${event.target.value.replace(
@@ -185,22 +202,9 @@ upperMain.addEventListener("click", () => {
       )}.svg), url(../assets/images/icon-chevron-down.svg)`;
     }
   });
-
-  // selectionInputs.forEach((input) => {
-  //   input.addEventListener("input", () => {
-  //     upperMain.click();
-  //     if (arrayOfboxes.includes(input.value)) {
-  //       const linkBox = input.closest(".link-box");
-  //       linkBox.remove();
-  //       let index = arrayOfboxes.indexOf(input.value);
-
-  //       arrayOfboxes.splice(index, 1);
-
-  //       upperMain.click();
-  //     }
-  //   });
-  // });
 });
+
+//remove every colorful box if there is no inputs box
 
 upperMain.addEventListener("click", (event) => {
   const currentLinks = upperMain.querySelectorAll(".link-box").length;
@@ -214,29 +218,96 @@ upperMain.addEventListener("click", (event) => {
     footer.classList.add("buttonActive");
   }
 
+  //remove selected inputs box
+
   if (event.target.classList.contains("custom-remove")) {
     const linkBox = event.target.closest(".link-box");
     if (linkBox) {
       linkBox.remove();
       updateLinkNumeration();
+      upperMain.click();
     }
   }
-  upperMain.click();
 });
+
+// to dont repeat input boxes
+
+upperMain.addEventListener("input", (event) => {
+  let colorfulBoxes = document.querySelectorAll(".rectangle-h");
+  let colorfulBoxesContent = [...colorfulBoxes].map((box) => box.innerHTML);
+
+  if (
+    event.target.classList.contains("dropDown") &&
+    colorfulBoxesContent.includes(event.target.value)
+  ) {
+    const linkBox = event.target.closest(".link-box");
+    linkBox.remove();
+  }
+  upperMain.click();
+  updateLinkNumeration();
+});
+
+
+
+// Dispatch the input event
+upperMain.dispatchEvent(new InputEvent("input", { bubbles: true }));
+
+// to save user information
 
 saveButton.addEventListener("click", () => {
   const allLinkBoxes = upperMain.querySelectorAll(".custom-selections");
+  const allInput = upperMain.querySelectorAll(".customization-area");
+
+  let hasError = false;
+
+  allInput.forEach((element) => {
+    if (element.value === "") {
+      element.parentElement.classList.add("error");
+      hasError = true;
+    }
+  });
+
+  if (hasError) {
+    return;
+  }
+
+  /////////////////////////////////////////
+
+  let colorfulBoxes = document.querySelectorAll(".rectangle-h");
+  let colorfulBoxesContent = [...colorfulBoxes].map((box) => box.innerHTML);
+  localStorage.setItem("arrayOfBoxes", JSON.stringify(colorfulBoxesContent));
+
+  ////////////////////////////////////
 
   let dataObj = {};
   allLinkBoxes.forEach((element) => {
     socialNetwork = element.children[0].children[1].value;
     link = element.children[1].children[2].value;
 
-    if (link === "") {
-      element.classList.add("error");
-      return;
-    }
     dataObj[socialNetwork] = link;
     localStorage.setItem("links", JSON.stringify(dataObj));
+
+    alertOfSucces.style.display = "flex";
+    setTimeout(() => {
+      alertOfSucces.style.display = "none";
+    }, 3000);
   });
+});
+
+
+
+//////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", () => {
+  arrayOfboxes = JSON.parse(localStorage.getItem("arrayOfBoxes"));
+  createColorfulBoxes(arrayOfboxes);
+
+
+  ///////////////////////////////////////
+  let colorfulBoxes = document.querySelectorAll(".rectangle-h");
+  let colorfulBoxesContent = [...colorfulBoxes].map((box) => box.innerHTML);
+
+  if (colorfulBoxesContent.length > 0) {
+    emptyDesign.style.display = "none";
+  }
 });

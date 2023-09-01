@@ -1,3 +1,4 @@
+const inputBasic = document.querySelectorAll(".input-basic");
 const saveButton = document.querySelector(".save");
 const firstNameInput = document.querySelector("#username");
 const lastNameInput = document.querySelector("#lastname");
@@ -10,6 +11,9 @@ const emailUnderFullname = document.querySelector(".mail-name");
 const fullNameWrapper = document.querySelector(".fullName-wrapper");
 const phone = document.querySelector(".visual-left");
 const image = localStorage.getItem("thumbnail");
+let alertOfSucces = document.querySelector(".your-changes-are-succesfull");
+const regexNotEmpty = /\S/;
+const regexForEmail = /^.+@.+\..+$/;
 
 ////////////////////////////////////////////////////
 
@@ -64,6 +68,8 @@ uploadInput.addEventListener("change", updateFileName);
 
 ////////////////////////////////////////////////
 
+//colorful boxes
+
 let linkboxs = JSON.parse(localStorage.getItem("links"));
 var keys = Object.keys(linkboxs);
 console.log(keys);
@@ -115,8 +121,52 @@ keys.forEach((element, index) => {
   phone.appendChild(newBox);
 });
 
-//////////////////////////////////
+//////////////////////////////////\
+
+//remove errors on input
+
+inputBasic.forEach((element) => {
+  element.addEventListener("input", () => {
+    element.parentElement.classList.remove("error");
+    if (element.value !== "") {
+      saveButton.style.opacity = "1";
+      console.log("avto");
+    } else {
+      saveButton.style.opacity = "0.25";
+    }
+  });
+});
+
+//save button
+
 saveButton.addEventListener("click", () => {
+  ///errors
+
+  let error = false;
+  if (!regexNotEmpty.test(firstNameInput.value)) {
+    firstNameInput.parentElement.classList.add("error");
+    error = true;
+  }
+  if (!regexNotEmpty.test(lastNameInput.value)) {
+    lastNameInput.parentElement.classList.add("error");
+    error = true;
+  }
+  if (!regexForEmail.test(emailInput.value)) {
+    emailInput.parentElement.classList.add("error");
+    emailInput.parentNode.lastElementChild.innerHTML = "invalid email!";
+    error = true;
+    if (emailInput.value === "") {
+      emailInput.parentNode.lastElementChild.innerHTML = "Can’t be empty";
+    }
+  }
+  if (error) {
+    return;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  // save data
+
   let objUserInformation = {};
 
   objUserInformation["Firstname"] = firstNameInput.value;
@@ -125,13 +175,28 @@ saveButton.addEventListener("click", () => {
   localStorage.setItem("profile details", JSON.stringify(objUserInformation));
   console.log(objUserInformation);
 
+  // throw alert of success
+
+  alertOfSucces.style.display = "flex";
+  setTimeout(() => {
+    alertOfSucces.style.display = "none";
+  }, 3000);
+
   ////////////////////////////////////////////////////////
+
+  // use data from localStorage
+
   let profileDetails = JSON.parse(localStorage.getItem("profile details"));
 
   fulName.innerHTML = `${profileDetails["Firstname"]} ${profileDetails["lastName"]}`;
   emailUnderFullname.innerHTML = profileDetails["email"];
+
   fullNameWrapper.style.background = "white";
 });
+
+///////////////////////////////////////////
+
+//use data from localStorage
 
 document.addEventListener("DOMContentLoaded", () => {
   let profileDetails = JSON.parse(localStorage.getItem("profile details"));
@@ -143,3 +208,5 @@ document.addEventListener("DOMContentLoaded", () => {
   uploadPhotoWrapper.style.backgroundImage = `url(${image}) `;
   imageWrapper.style.backgroundImage = `url(${image})`;
 });
+
+////////////////////////////////////////////////////////////////////

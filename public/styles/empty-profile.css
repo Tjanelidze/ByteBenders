@@ -154,6 +154,7 @@ header {
 
 /* Main part styling */
 .main {
+  position: relative;
   display: grid;
   grid-template-columns: 45fr 55fr;
   gap: 24px;
@@ -489,7 +490,32 @@ header {
   padding-right: 110px;
   border: 1px solid #ff3939;
 }
+
 .error #input-link:focus {
   box-shadow: 0px 0px 0px 0px rgba(99, 60, 255, 0.25);
   outline: none;
+}
+
+.your-changes-are-succesfull {
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  right: 20%;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  height: 56px;
+  border-radius: 12px;
+  background: #333;
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+  color: #fafafa;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.icon-Your-changes {
+  width: 20px;
+  height: 20px;
 }

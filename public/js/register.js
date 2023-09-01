@@ -34,6 +34,11 @@ formOfRegistration.addEventListener("submit", async (event) => {
   }
 });
 
+
+
+
+//create new acount
+
 createNewAcountButton.addEventListener("click", () => {
   if (!regexForEmail.test(emailInput.value)) {
     emailInput.parentElement.classList.add("error");
