@@ -9,6 +9,7 @@ let saveButton = document.querySelector(".save");
 let footer = document.querySelector(".end");
 let main = document.querySelector(".main");
 let alertOfSucces = document.querySelector(".your-changes-are-succesfull");
+let logoImages = document.querySelectorAll(".both-logo");
 ////******************************************************* */
 
 let boxColors = {
@@ -301,4 +302,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (colorfulBoxesContent.length > 0) {
     emptyDesign.style.display = "none";
   }
+});
+
+///refresh
+logoImages.forEach((image) => {
+  image.addEventListener("click", () => {
+    location.reload();
+  });
 });

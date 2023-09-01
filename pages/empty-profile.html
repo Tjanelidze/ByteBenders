@@ -4,30 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/general.css" />
-    <link rel="stylesheet" href="../styles/filled-profile.css" />
+    <link rel="stylesheet" href="../styles/empty-profile.css" />
     <link rel="stylesheet" href="../styles/tablet/empty-tablet.css" />
-    <link rel="stylesheet" href="../styles/mobile/filled-mobile.css" />
-    <title>Filled Profile</title>
+    <link rel="stylesheet" href="../styles/mobile/empty-mobile.css" />
+    <title>Empty Profile</title>
   </head>
   <body>
     <div class="container">
       <header>
         <!-- Main logo -->
-
         <img
           src="../assets/images/logo-devlinks-large.svg"
           alt="logo-devlinks-large"
-          class="logo"
+          class="logo both-logo"
         />
         <img
           src="../assets/images/logo-devlinks-small.svg"
           alt="logo-devlinks-small"
-          class="logo-small"
+          class="logo-small both-logo"
         />
         <!-- header middle section, for Link and profile details -->
         <div class="header-details">
           <a href="../pages/empty-profile.html" class="links">
-            <button class="links">
+            <button class="links link-active-state">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -44,7 +43,7 @@
             </button>
           </a>
           <a href="../pages/filled-profile.html" class="prof-details">
-            <button class="prof-details link-active-state">
+            <button class="prof-details">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -61,92 +60,56 @@
             </button>
           </a>
         </div>
+
         <a href="./preview.html"
           ><div class="preview">
             <button class="preview-p">Preview</button>
-          </div></a
-        >
+            <img
+              src="../assets/images/icon-preview-header.svg"
+              alt="eye-for-password"
+              class="preview-img"
+            /></div
+        ></a>
       </header>
       <!-- From here we have main part of page -->
       <main class="main">
+        <!-- <div>
+
+        </div> -->
         <!-- In dekstop design, we have left part of the viewport, where sets phone image -->
         <div class="main-part visual-left">
-          <div class="profile-wrapper">
-            <div class="image-wrapper"></div>
-            <div class="fullName-wrapper">
-              <h2 class="fulName"></h2>
-              <h3 class="mail-name"></h3>
-            </div>
+          <div class="img-wrapper">
+            <img
+              src="../assets/images/illustration-phone-mockup.svg"
+              alt="illustration-phone-mockup"
+              class="phone"
+            />
           </div>
-          <img
-            src="../assets/images/illustration-phone-mockup.svg"
-            alt="illustration-phone-mockup"
-            class="phone"
-          />
         </div>
         <!-- This is the right and main part of parent div, where user can customize his/her links -->
         <div class="main-part info-right">
           <div class="upper-main">
-            <h2 class="customization-h">Profile Details</h2>
+            <h2 class="customization-h">Customize your links</h2>
             <p class="customization-p">
-              Add your details to create a personal touch to your profile.
+              Add/edit/remove links below and then share all your profiles with
+              the world!
             </p>
+            <div class="add-link">
+              <button class="add-p">+ Add new link</button>
+            </div>
           </div>
-          <!-- Down below, we have a profile details-->
-          <div class="profile-details">
-            <div class="profile-pictures">
-              <p class="profile-picture-p">Profile picture</p>
-              <label for="upload-photo" class="upload-photo-class">
-                <div class="custom-file-input">
-                  <input
-                    type="file"
-                    id="upload-photo"
-                    class="upload-p"
-                    accept="image/*"
-                  />
-                  + Upload Image
-                </div>
-              </label>
-              <p class="upload-explanation">
-                Image must be below 1024x1024px. Use PNG or JPG format.
-              </p>
-            </div>
-            <div class="profile-blanket">
-              <div class="blnks profile-blanket-name">
-                <label for="username">First name*</label>
-                <input
-                  type="text"
-                  class="input-basic"
-                  id="username"
-                  name="username"
-                  placeholder="e.g. John"
-                />
-                <p class="username-eror-p">Can’t be empty</p>
-              </div>
-              <div class="blnks profile-blanket-last-Name">
-                <label for="lastname">Last name*</label>
-                <input
-                  type="text"
-                  class="input-basic"
-                  id="lastname"
-                  name="lastname"
-                  placeholder="e.g. Appleseed"
-                />
-                <p class="lastname-eror-p">Can’t be empty</p>
-              </div>
-
-              <div class="blnks profile-blanket-email">
-                <label for="email-blank">Email</label>
-                <input
-                  type="email"
-                  class="input-basic"
-                  id="email-blank"
-                  name="email-blank"
-                  placeholder="e.g. email@example.com"
-                />
-                <p class="email-blank-eror-p">Can’t be empty</p>
-              </div>
-            </div>
+          <div class="new-link-page">
+            <img
+              src="../assets/images/illustration-empty.svg"
+              alt="icon-link-copied-to-clipboard"
+              class="new-link-image"
+            />
+            <h3 class="new-link-h">Let’s get you started</h3>
+            <p class="new-link-p">
+              Use the “Add new link” button to get started. Once you have more
+              than one link, you can reorder and edit them. We’re here to help
+              you share your profiles with everyone!
+            </p>
           </div>
           <div class="end">
             <button class="save">Save</button>
@@ -162,6 +125,6 @@
         </div>
       </main>
     </div>
-    <script src="../js/filled-profile.js"></script>
+    <script src="../js/empty-profile.js"></script>
   </body>
 </html>

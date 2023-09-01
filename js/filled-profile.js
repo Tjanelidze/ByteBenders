@@ -13,6 +13,7 @@ const phone = document.querySelector(".visual-left");
 const image = localStorage.getItem("thumbnail");
 let alertOfSucces = document.querySelector(".your-changes-are-succesfull");
 let linkboxs = JSON.parse(localStorage.getItem("links"));
+let logoImages = document.querySelectorAll(".both-logo");
 const regexNotEmpty = /\S/;
 const regexForEmail = /^.+@.+\..+$/;
 
@@ -209,4 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-////////////////////////////////////////////////////////////////////
+////refresh
+
+logoImages.forEach((image) => {
+  image.addEventListener("click", () => {
+    location.reload();
+  });
+});

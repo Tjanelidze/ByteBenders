@@ -12,35 +12,6 @@ const regexForPassword = /.{8,}/;
 
 formOfLogin.addEventListener("submit", async (event) => {
   event.preventDefault();
-
-  const formData = new FormData(formOfLogin);
-  const payload = {};
-  formData.forEach((value, key) => {
-    payload[key] = value;
-  });
-
-  const response = await fetch("http://localhost:3000/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  const responseData = await response.json();
-
-  if (response.status === 200) {
-    window.location.href = "/pages/empty-profile.html";
-  }
-});
-
-
-
-
-//login button
-
-loginButton.addEventListener("click", () => {
-  //email error
   if (emailInput.value == "") {
     emailInput.parentElement.classList.add("error");
   }
@@ -48,7 +19,21 @@ loginButton.addEventListener("click", () => {
   // password input error
   if (!regexForPassword.test(passwordInput.value)) {
     passwordInput.parentElement.classList.add("error");
+  } else {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (
+      user.email == emailInput.value &&
+      user.password == passwordInput.value
+    ) {
+      window.location.href = "/pages/empty-profile.html";
+    }
   }
+});
+
+//login button
+
+loginButton.addEventListener("click", () => {
+  //email error
 });
 
 allInput.forEach((element) => {

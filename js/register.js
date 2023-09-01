@@ -14,29 +14,6 @@ const regexForEmail = /^.+@.+\..+$/;
 
 formOfRegistration.addEventListener("submit", async (event) => {
   event.preventDefault();
-
-  const formData = new FormData(formOfRegistration);
-  const payload = {};
-  formData.forEach((value, key) => {
-    payload[key] = value;
-  });
-
-  const response = await fetch("http://localhost:3000/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (response.status === 201) {
-    window.location.href = "http://localhost:3000/";
-  }
-});
-
-//create new acount
-
-createNewAcountButton.addEventListener("click", () => {
   if (!regexForEmail.test(emailInput.value)) {
     emailInput.parentElement.classList.add("error");
     emailInput.parentNode.lastElementChild.innerHTML = "invalid email!";
@@ -52,8 +29,21 @@ createNewAcountButton.addEventListener("click", () => {
     !regexForPassword.test(confirmPasswordInput.value)
   ) {
     confirmPasswordInput.parentElement.classList.add("error");
+  } else {
+    let userObj = {
+      email: "",
+      password: "",
+    };
+    userObj.email = emailInput.value;
+    userObj.password = createPasswordInput.value;
+    localStorage.setItem("user", JSON.stringify(userObj));
+    window.location.href = "/";
   }
 });
+
+//create new acount
+
+createNewAcountButton.addEventListener("click", () => {});
 
 //remove errors on input
 allInput.forEach((element) => {
