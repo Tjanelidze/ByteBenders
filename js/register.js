@@ -12,7 +12,7 @@ const regexForEmail = /^.+@.+\..+$/;
 
 //************************************************************** */
 
-formOfRegistration.addEventListener("submit", async (event) => {
+formOfRegistration.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!regexForEmail.test(emailInput.value)) {
     emailInput.parentElement.classList.add("error");
@@ -42,8 +42,6 @@ formOfRegistration.addEventListener("submit", async (event) => {
 });
 
 //create new acount
-
-createNewAcountButton.addEventListener("click", () => {});
 
 //remove errors on input
 allInput.forEach((element) => {

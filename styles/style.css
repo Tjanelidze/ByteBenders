@@ -57,6 +57,7 @@ body {
 }
 
 .icon-email {
+  font-size: 14px;
   width: 16px;
   position: absolute;
   top: 34px;

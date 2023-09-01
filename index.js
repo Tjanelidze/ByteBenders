@@ -4,23 +4,36 @@ const loginButton = document.querySelector(".login-button");
 const emailInput = document.querySelector(".email-input");
 const passwordInput = document.querySelector(".password-input");
 const eyeIcon = document.querySelectorAll(".eye-icon");
+const user = JSON.parse(localStorage.getItem("user"));
 const regexForPassword = /.{8,}/;
 
 //*******************************************************8 */
 
 //form
 
-formOfLogin.addEventListener("submit", async (event) => {
+formOfLogin.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (emailInput.value == "") {
+  if (!emailInput.value) {
+    console.log(emailInput.parentElement.children[3]);
+    emailInput.parentElement.children[3].innerHTML = "can't be empty";
     emailInput.parentElement.classList.add("error");
+    console.log(emailInput.parentElement.children[3]);
   }
 
   // password input error
   if (!regexForPassword.test(passwordInput.value)) {
     passwordInput.parentElement.classList.add("error");
   } else {
-    const user = JSON.parse(localStorage.getItem("user"));
+    if (user.email !== emailInput.value) {
+      emailInput.parentElement.children[3].innerHTML = "Email Failed";
+      emailInput.parentElement.classList.add("error");
+    }
+    if (
+      user.email == emailInput.value &&
+      user.password != passwordInput.value
+    ) {
+      passwordInput.parentElement.classList.add("error");
+    }
     if (
       user.email == emailInput.value &&
       user.password == passwordInput.value
@@ -31,10 +44,6 @@ formOfLogin.addEventListener("submit", async (event) => {
 });
 
 //login button
-
-loginButton.addEventListener("click", () => {
-  //email error
-});
 
 allInput.forEach((element) => {
   element.addEventListener("input", () => {
