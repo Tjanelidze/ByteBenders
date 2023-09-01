@@ -109,7 +109,6 @@ if (linksInformation !== null) {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       let buttonName = button.children[1].textContent;
-      console.log();
       window.location.href = linksInformation[buttonName];
     });
   });

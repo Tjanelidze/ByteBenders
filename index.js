@@ -13,36 +13,27 @@ const regexForPassword = /.{8,}/;
 
 formOfLogin.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!emailInput.value) {
+  if (!emailInput.value && !passwordInput.value) {
+  
+    passwordInput.parentElement.classList.add("error");
     emailInput.parentElement.children[3].innerHTML = "can't be empty";
     emailInput.parentElement.classList.add("error");
+    
     return;
   }
 
   // password input error
 
-  if (!regexForPassword.test(passwordInput.value)) {
-    passwordInput.parentElement.classList.add("error");
+  if (user.email !== emailInput.value) {
+    emailInput.parentElement.children[3].innerHTML = "Email Failed";
+    emailInput.parentElement.classList.add("error");
     return;
-  } else {
-    if (user.email !== emailInput.value) {
-      emailInput.parentElement.children[3].innerHTML = "Email Failed";
-      emailInput.parentElement.classList.add("error");
-      return;
-    }
-    if (
-      user.email == emailInput.value &&
-      user.password != passwordInput.value
-    ) {
-      passwordInput.parentElement.classList.add("error");
-      return;
-    }
-    if (
-      user.email == emailInput.value &&
-      user.password == passwordInput.value
-    ) {
-      window.location.href = "/pages/empty-profile.html";
-    }
+  }
+  if (user.email == emailInput.value && user.password != passwordInput.value) {
+    passwordInput.parentElement.classList.add("error");
+  }
+  if (user.email == emailInput.value && user.password == passwordInput.value) {
+    window.location.href = "/pages/empty-profile.html";
   }
 });
 
