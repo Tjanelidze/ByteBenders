@@ -20,6 +20,7 @@ formOfLogin.addEventListener("submit", (event) => {
   }
 
   // password input error
+
   if (!regexForPassword.test(passwordInput.value)) {
     passwordInput.parentElement.classList.add("error");
     return;
